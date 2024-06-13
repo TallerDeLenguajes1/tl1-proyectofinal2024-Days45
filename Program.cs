@@ -1,2 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿//probando que las clases Personaje, Datos y caracteristicas funcionen
+using System;
+using EspacioPersonaje;
+
+
