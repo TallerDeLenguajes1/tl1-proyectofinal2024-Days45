@@ -2,17 +2,20 @@
 
 public class Caracteristicas
 {
-    //Características: velocidad;(1 a 10), destreza; (1 a 5), fuerza;(1 a 10), Nivel; (1 a 10), Armadura; (1 a 10), Salud:(100)
-
-    public int HP { get; set; } // 100
-    public int Ataque { get; set; } //1 a 10
-    public int Defensa { get; set; } // 1 a 10
-    public int Velocidad { get; set; } //1 a 10
-    public int Nivel { get; set; } // 1 a 10
+    private int salud; 
+    private int ataque;
+    private int defensa;
+    private int velocidad; 
+    private int nivel;
+    public int Salud { get => salud; set => salud = value; }
+    public int Ataque { get => ataque; set => ataque = value; }
+    public int Defensa { get => defensa; set => defensa = value; }
+    public int Velocidad { get => velocidad; set => velocidad = value; }
+    public int Nivel { get => nivel; set => nivel = value; }
 
     public Caracteristicas( int ataque, int defensa, int velocidad, int nivel)
     {
-        HP = 100;
+        Salud = 100;
         Ataque = ataque;
         Defensa = defensa;
         Velocidad = velocidad;
@@ -21,7 +24,7 @@ public class Caracteristicas
 
     public int CalcularAtaque(Movimiento movimiento)
     {
-        return Ataque * Nivel * movimiento.Poder;
+        return Ataque * Nivel * movimiento.PotenciaMovimiento;
     }
 
     // Método para calcular la efectividad
@@ -35,22 +38,14 @@ public class Caracteristicas
     public bool EsquivarAtaque()
     {
         Random random = new Random();
-        double probabilidadEsquivar = Velocidad / 10.0;
+        double probabilidadEsquivar = Velocidad / 25.0;
         return random.NextDouble() < probabilidadEsquivar;
     }
 
     // Método para actualizar la salud
     public void ActualizarSalud(double danoProvocado)
     {
-        // Si el daño provocado es mayor que la salud actual, establecer la salud a 0
-        if (danoProvocado >= HP)
-        {
-            HP = 0;
-        }
-        else
-        {
-            HP -=(int)danoProvocado;
-        }
+       Salud = Math.Max(0, Salud - (int)danoProvocado);
     }
 
     // Método para calcular el daño
@@ -63,6 +58,8 @@ public class Caracteristicas
     {
         double defensa = defensor.Defensa;
         double danoProvocado = (CalcularAtaque(movimiento) * CalcularEfectividad()) - defensa;
+        danoProvocado = Math.Max(0, danoProvocado);
+
         // Si el tipo de ataque del movimiento es igual a la debilidad del defensor, el daño se duplica
         if (movimiento.TipoAtaque == datosDefensor.Debilidad)
         {

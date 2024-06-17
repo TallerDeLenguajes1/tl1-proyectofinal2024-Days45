@@ -27,29 +27,5 @@ namespace EspacioPersonaje
             set => caracteristicas = value;
         }
 
-        public void MostrarDetalles()
-        {
-            Console.WriteLine("Nombre: " + Datito.Nombre);
-            Console.WriteLine("Tipo: " + Datito.Tipo);
-            Console.WriteLine("Debilidad: " + Datito.Debilidad);
-            Console.WriteLine("Movimientos: ");
-            foreach (Movimiento movimiento in Datito.Movimientos)
-            {
-                Console.WriteLine(
-                    " - "
-                        + movimiento.Nombre
-                        + " ("
-                        + movimiento.TipoAtaque
-                        + ", "
-                        + movimiento.Poder
-                        + ")"
-                );
-            }
-            Console.WriteLine("HP: " + Caracteristicas.HP);
-            Console.WriteLine("Ataque: " + Caracteristicas.Ataque);
-            Console.WriteLine("Defensa: " + Caracteristicas.Defensa);
-            Console.WriteLine("Velocidad: " + Caracteristicas.Velocidad);
-            Console.WriteLine("Nivel: " + Caracteristicas.Nivel);
-        }
     }
 }
