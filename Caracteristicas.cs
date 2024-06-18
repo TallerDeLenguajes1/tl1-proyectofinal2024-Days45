@@ -61,7 +61,7 @@ public class Caracteristicas
         danoProvocado = Math.Max(0, danoProvocado);
 
         // Si el tipo de ataque del movimiento es igual a la debilidad del defensor, el daño se duplica
-        if (movimiento.TipoAtaque == datosDefensor.Debilidad)
+        if (datosDefensor.Debilidades.Contains(movimiento.TipoAtaque))
         {
             danoProvocado *= 2;
         }

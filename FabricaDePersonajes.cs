@@ -8,37 +8,34 @@ namespace EspacioPersonaje
         private Random random = new Random();
 
         // Lista de posibles Pokémon con sus nombres, tipos y debilidades
-        private List<(string Nombre, string Tipo, string Debilidad)> pokemons = new List<(
-            string,
-            string,
-            string
-        )>
-        {
-            ("Charmander", "Fuego", "Agua"),
-            ("Squirtle", "Agua", "Planta"),
-            ("Bulbasaur", "Planta", "Fuego"),
-            ("Pikachu", "Eléctrico", "Tierra"),
-            ("Jigglypuff", "Normal", "Lucha")
-        };
+        private List<(string Nombre, Elemento Tipo, List<Elemento> Debilidades)> pokemons =
+            new List<(string, Elemento, List<Elemento>)>
+            {
+                ("Charmander", Elemento.Fuego, new List<Elemento> { Elemento.Agua }),
+                ("Squirtle", Elemento.Agua, new List<Elemento> { Elemento.Planta }),
+                ("Bulbasaur", Elemento.Planta, new List<Elemento> { Elemento.Fuego }),
+                ("Pikachu", Elemento.Electrico, new List<Elemento> { Elemento.Tierra }),
+                ("Jigglypuff", Elemento.Normal, new List<Elemento> { Elemento.Lucha })
+            };
 
         // Lista de posibles movimientos de Pokémon
-        private List<(string Nombre, string Tipo)> movimientos = new List<(string, string)>
+        private List<(string Nombre, Elemento Tipo)> movimientos = new List<(string, Elemento)>
         {
-            ("Lanzallamas", "Fuego"),
-            ("Pirotecnia", "Fuego"),
-            ("Infierno", "Fuego"),
-            ("Hidrobomba", "Agua"),
-            ("Pistola Agua", "Agua"),
-            ("Acua Jet", "Agua"),
-            ("Rayo Solar", "Planta"),
-            ("Látigo Cepa", "Planta"),
-            ("Hoja Afilada", "Planta"),
-            ("Impactrueno", "Eléctrico"),
-            ("Rayo", "Eléctrico"),
-            ("Electro Impacto", "Eléctrico"),
-            ("Doble Bofetón", "Normal"),
-            ("Golpe Cuerpo", "Normal"),
-            ("Giga Impacto", "Normal")
+            ("Lanzallamas", Elemento.Fuego),
+            ("Ascuas", Elemento.Fuego),
+            ("Pirotecnia", Elemento.Fuego),
+            ("Pistola Agua", Elemento.Agua),
+            ("Burbuja", Elemento.Agua),
+            ("Hidrobomba", Elemento.Agua),
+            ("Latigo Cepa", Elemento.Planta),
+            ("Hoja Afilada", Elemento.Planta),
+            ("Rayo Solar", Elemento.Planta),
+            ("Impactrueno", Elemento.Electrico),
+            ("Rayo", Elemento.Electrico),
+            ("Chispa", Elemento.Electrico),
+            ("Ataque Rápido", Elemento.Normal),
+            ("Golpe Cabeza", Elemento.Normal),
+            ("Canto", Elemento.Normal)
         };
 
         public Personaje CrearPersonaje()
