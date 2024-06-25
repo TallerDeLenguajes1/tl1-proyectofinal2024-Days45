@@ -1,0 +1,167 @@
+[
+  {
+    "Datito": {
+      "Tipo": 0,
+      "Nombre": "Jigglypuff",
+      "Debilidades": [
+        6
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Ataque R\u00E1pido",
+          "TipoAtaque": 0,
+          "PotenciaMovimiento": 9
+        },
+        {
+          "Nombre": "Golpe Cabeza",
+          "TipoAtaque": 0,
+          "PotenciaMovimiento": 5
+        },
+        {
+          "Nombre": "Canto",
+          "TipoAtaque": 0,
+          "PotenciaMovimiento": 6
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 5,
+      "Defensa": 4,
+      "Velocidad": 3,
+      "Nivel": 1
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 0,
+      "Nombre": "Jigglypuff",
+      "Debilidades": [
+        6
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Ataque R\u00E1pido",
+          "TipoAtaque": 0,
+          "PotenciaMovimiento": 4
+        },
+        {
+          "Nombre": "Golpe Cabeza",
+          "TipoAtaque": 0,
+          "PotenciaMovimiento": 6
+        },
+        {
+          "Nombre": "Canto",
+          "TipoAtaque": 0,
+          "PotenciaMovimiento": 1
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 4,
+      "Defensa": 2,
+      "Velocidad": 1,
+      "Nivel": 5
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 0,
+      "Nombre": "Jigglypuff",
+      "Debilidades": [
+        6
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Ataque R\u00E1pido",
+          "TipoAtaque": 0,
+          "PotenciaMovimiento": 6
+        },
+        {
+          "Nombre": "Golpe Cabeza",
+          "TipoAtaque": 0,
+          "PotenciaMovimiento": 5
+        },
+        {
+          "Nombre": "Canto",
+          "TipoAtaque": 0,
+          "PotenciaMovimiento": 4
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 5,
+      "Defensa": 7,
+      "Velocidad": 4,
+      "Nivel": 1
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 3,
+      "Nombre": "Pikachu",
+      "Debilidades": [
+        8
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Impactrueno",
+          "TipoAtaque": 3,
+          "PotenciaMovimiento": 3
+        },
+        {
+          "Nombre": "Rayo",
+          "TipoAtaque": 3,
+          "PotenciaMovimiento": 8
+        },
+        {
+          "Nombre": "Chispa",
+          "TipoAtaque": 3,
+          "PotenciaMovimiento": 6
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 2,
+      "Defensa": 4,
+      "Velocidad": 1,
+      "Nivel": 1
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 0,
+      "Nombre": "Jigglypuff",
+      "Debilidades": [
+        6
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Ataque R\u00E1pido",
+          "TipoAtaque": 0,
+          "PotenciaMovimiento": 1
+        },
+        {
+          "Nombre": "Golpe Cabeza",
+          "TipoAtaque": 0,
+          "PotenciaMovimiento": 10
+        },
+        {
+          "Nombre": "Canto",
+          "TipoAtaque": 0,
+          "PotenciaMovimiento": 3
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 9,
+      "Defensa": 7,
+      "Velocidad": 8,
+      "Nivel": 1
+    }
+  }
+]

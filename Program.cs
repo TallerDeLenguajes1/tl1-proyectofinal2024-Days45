@@ -15,10 +15,8 @@ class Program
         if (int.TryParse(Console.ReadLine(), out int id))
         {
             Console.Clear();
-            EspacioPersonaje.FabricaDePersonajes fabrica =
-                new EspacioPersonaje.FabricaDePersonajes();
-            List<EspacioPersonaje.Personaje> listaPokemones =
-                new List<EspacioPersonaje.Personaje>();
+            EspacioPersonaje.FabricaDePersonajes fabrica = new EspacioPersonaje.FabricaDePersonajes();
+            List<EspacioPersonaje.Personaje> listaPokemones = new List<EspacioPersonaje.Personaje>();
 
             // Crear varios Pokémon y agregarlos a la lista para que el usuario elija
             for (int i = 0; i < 5; i++)
@@ -28,21 +26,17 @@ class Program
 
             int indicePokemon = 0;
             ConsoleKeyInfo tecla;
-            int contadorPokemon = 1; // Variable para contar el número de Pokémon mostrado
-            
-            // Declaramos una variable para almacenar la elección final del usuario
             int? eleccionFinal = null;
 
-            // Bucle principal que se ejecuta al menos una vez y continúa hasta que el usuario presione la barra espaciadora
             do
             {
-                Console.Clear(); // Limpiamos la consola para mostrar el siguiente Pokémon en una pantalla limpia
+                Console.Clear();
 
                 // Obtenemos el Pokémon actual según el índice actual (indicePokemon) y lo mostramos en la consola
                 var pokemonActual = listaPokemones[indicePokemon];
                 
                 // Mostramos el número de Pokémon actual
-                Console.WriteLine($"Pokémon número {contadorPokemon}");
+                Console.WriteLine($"Pokémon número {indicePokemon + 1}");
 
                 // Mostramos los detalles del Pokémon actual usando la función mostrarPersonaje()
                 pokemonActual.mostrarPersonaje();
@@ -75,10 +69,6 @@ class Program
                         Console.WriteLine($"\nHas elegido al Pokémon número {eleccionPokemon + 1}: {pokemonElegido.Datito.Nombre}!");
                     }
                 }
-
-                // Incrementamos el contador de Pokémon mostrados
-                contadorPokemon++;
-
             } while (tecla.Key != ConsoleKey.Spacebar); // El bucle se repite hasta que el usuario presione la barra espaciadora para salir
 
             // Una vez que el usuario sale del bucle, verificamos si ha realizado una elección válida

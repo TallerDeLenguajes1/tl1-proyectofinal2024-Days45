@@ -11,20 +11,18 @@ namespace EspacioPersonaje
         // Constructor
         public Personaje(Datos datito, Caracteristicas caracteristicas)
         {
-            this.Datito = datito;
-            this.Caracteristicas = caracteristicas;
+            this.datito = datito;
+            this.caracteristicas = caracteristicas;
         }
 
-        // Getters y Setters
+        
         public Datos Datito
         {
             get => datito;
-            set => datito = value;
         }
         public Caracteristicas Caracteristicas
         {
-            get => caracteristicas;
-            set => caracteristicas = value;
+            get => caracteristicas;   
         }
 
         public void mostrarPersonaje()

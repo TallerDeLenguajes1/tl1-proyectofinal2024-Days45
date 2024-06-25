@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Text.Json.Serialization;
 namespace EspacioPersonaje;
 
 public class Movimiento
@@ -8,6 +8,7 @@ public class Movimiento
     private string nombre;
     private Elemento tipoAtaque; // El tipo de ataque del movimiento (por ejemplo, Fuego, Agua, etc.)
     private int potenciaMovimiento; //1 a 10 La potencia del movimiento
+    [JsonConstructor]
     public Movimiento(string nombre, Elemento tipoAtaque, int poder)
     {
         this.Nombre = nombre;

@@ -7,11 +7,11 @@ public class Caracteristicas
     private int defensa;
     private int velocidad; 
     private int nivel;
-    public int Salud { get => salud; set => salud = value; }
-    public int Ataque { get => ataque; set => ataque = value; }
-    public int Defensa { get => defensa; set => defensa = value; }
-    public int Velocidad { get => velocidad; set => velocidad = value; }
-    public int Nivel { get => nivel; set => nivel = value; }
+    public int Salud { get => salud; private set => salud = value; }
+    public int Ataque { get => ataque;private set => ataque = value; }
+    public int Defensa { get => defensa; private set => defensa = value; }
+    public int Velocidad { get => velocidad;private set => velocidad = value; }
+    public int Nivel { get => nivel; private set => nivel = value; }
 
     public Caracteristicas( int ataque, int defensa, int velocidad, int nivel)
     {
