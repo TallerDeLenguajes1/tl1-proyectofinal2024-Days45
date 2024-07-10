@@ -59,9 +59,9 @@ public class Caracteristicas
         double defensa = defensor.Defensa;
         double danoProvocado = (CalcularAtaque(movimiento) * CalcularEfectividad()) - defensa;
         danoProvocado = Math.Max(0, danoProvocado);
-
+        string tipoAtaqueStr = movimiento.TipoAtaque.ToString();
         // Si el tipo de ataque del movimiento es igual a la debilidad del defensor, el daño se duplica
-        if (datosDefensor.Debilidades.Contains(movimiento.TipoAtaque))
+        if (datosDefensor.Debilidades.Contains(movimiento.TipoAtaque.ToString()))
         {
             danoProvocado *= 2;
         }

@@ -1,12 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using EspacioPersonaje;
 
 class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
-        Console.Clear();
+        string nombreArchivo = "personajes.json";
+        List<Personaje> personajes;
+
+        // Verificar si el archivo de personajes existe y tiene datos
+        if (PersonajesJson.Existe(nombreArchivo))
+        {
+            // Cargar los personajes desde el archivo existente
+            personajes = PersonajesJson.LeerPersonajes(nombreArchivo);
+            Console.WriteLine("Personajes cargados desde el archivo existente:");
+        }
+        else
+        {
+            // Generar 10 personajes utilizando la clase FabricaDePersonajes
+            personajes = new List<Personaje>();
+            FabricaDePersonajes fabrica = new FabricaDePersonajes();
+            for (int i = 0; i < 10; i++)
+            {
+                personajes.Add(await fabrica.CrearPersonajeAsync());
+            }
+
+            // Guardar los personajes generados en el archivo de personajes
+            PersonajesJson.GuardarPersonajes(personajes, nombreArchivo);
+            Console.WriteLine("Se generaron 10 nuevos personajes y se guardaron en el archivo:");
+        }
+
+        // Mostrar por pantalla los datos y características de los personajes cargados
+        foreach (var personaje in personajes)
+        {
+            personaje.mostrarPersonaje();
+        }
+    }
+}
+
+
+/*
+ Console.Clear();
         Mensajes mensaje = new Mensajes();
         mensaje.titulo1();
         mensaje.titulo2();
@@ -79,5 +115,5 @@ class Program
                 Console.WriteLine($"\nHas confirmado tu elección: {pokemonElegido.Datito.Nombre}");
             }
         }
-    }
-}
+    
+*/

@@ -2,35 +2,61 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
-
-namespace EspacioPersonaje
+namespace EspacioPersonaje;
+public class PersonajesJson
 {
-    public class PersonajesJson
+    public static void GuardarPersonajes(List<Personaje> personajes, string nombreArchivo)
     {
-        // Método para guardar personajes en un archivo JSON
-        public void GuardarPersonajes(List<Personaje> personajes, string archivo)
+        try
         {
             var opciones = new JsonSerializerOptions { WriteIndented = true };
-            string json = JsonSerializer.Serialize(personajes, opciones);
-            File.WriteAllText(archivo, json);
-        }
-
-        // Método para leer personajes desde un archivo JSON
-        public List<Personaje> LeerPersonajes(string archivo)
-        {
-            if (!File.Exists(archivo) || new FileInfo(archivo).Length == 0)
+            using (var archivo = new FileStream(nombreArchivo, FileMode.Create))
             {
-                return new List<Personaje>(); // Retornar una lista vacía si el archivo no existe o está vacío
+                using (var strWriter = new StreamWriter(archivo))
+                {
+                    string json = JsonSerializer.Serialize(personajes, opciones);
+                    strWriter.WriteLine(json);
+                }
             }
-
-            string json = File.ReadAllText(archivo);
-            return JsonSerializer.Deserialize<List<Personaje>>(json);
+            Console.WriteLine($"Datos guardados en '{nombreArchivo}'.");
         }
-
-        // Método para verificar si un archivo existe y tiene datos
-        public bool Existe(string archivo)
+        catch (Exception e)
         {
-            return File.Exists(archivo) && new FileInfo(archivo).Length > 0;
+            Console.WriteLine($"Error al guardar el archivo '{nombreArchivo}': {e.Message}");
+        }
+    }
+
+    public static List<Personaje> LeerPersonajes(string nombreArchivo)
+    {
+        List<Personaje> personajes = new List<Personaje>();
+        try
+        {
+            using (var archivoOpen = new FileStream(nombreArchivo, FileMode.Open))
+            {
+                using (var strReader = new StreamReader(archivoOpen))
+                {
+                    string json = strReader.ReadToEnd();
+                    personajes = JsonSerializer.Deserialize<List<Personaje>>(json);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error al leer el archivo '{nombreArchivo}': {e.Message}");
+        }
+        return personajes;
+    }
+
+    public static bool Existe(string nombreArchivo)
+    {
+        try
+        {
+            return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error al verificar el archivo '{nombreArchivo}': {e.Message}");
+            return false;
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
 namespace EspacioPersonaje;
-
 public enum Elemento
 {
     Normal,
@@ -22,17 +20,18 @@ public enum Elemento
     Dragon,
     Siniestro,
     Acero,
-    Hada
+    Hada,
+    Desconocido // Valor por defecto para manejar casos no convertidos
 }
 
 public class Datos
 {
     private Elemento tipo;
     private string nombre;
-    private List<Elemento> debilidades;
+    private List<string> debilidades;
     private Movimiento[] movimientos = new Movimiento[3];
 
-    public Datos(Elemento tipo, string nombre, List<Elemento> debilidades, Movimiento[] movimientos)
+    public Datos(Elemento tipo, string nombre, List<string> debilidades, Movimiento[] movimientos)
     {
         this.tipo = tipo;
         this.nombre = nombre;
@@ -48,7 +47,7 @@ public class Datos
     {
         get => nombre;
     }
-    public List<Elemento> Debilidades
+    public List<string> Debilidades
     {
         get => debilidades;
     }
@@ -67,7 +66,7 @@ public class Datos
         this.nombre = nombre;
     }
 
-    public void EstablecerDebilidades(List<Elemento> debilidades)
+    public void EstablecerDebilidades(List<string> debilidades)
     {
         this.debilidades = debilidades;
     }
