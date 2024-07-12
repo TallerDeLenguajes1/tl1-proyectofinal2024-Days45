@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+
 namespace EspacioPersonaje;
+
 public class PersonajesJson
 {
     public static void GuardarPersonajes(List<Personaje> personajes, string nombreArchivo)
@@ -15,7 +17,10 @@ public class PersonajesJson
                 using (var strWriter = new StreamWriter(archivo))
                 {
                     string json = JsonSerializer.Serialize(personajes, opciones);
+                    Console.WriteLine("JSON guardado:");
+                    Console.WriteLine(json);
                     strWriter.WriteLine(json);
+                    strWriter.Flush();
                 }
             }
             Console.WriteLine($"Datos guardados en '{nombreArchivo}'.");
@@ -36,6 +41,8 @@ public class PersonajesJson
                 using (var strReader = new StreamReader(archivoOpen))
                 {
                     string json = strReader.ReadToEnd();
+                    Console.WriteLine("JSON leído:");
+                    Console.WriteLine(json);
                     personajes = JsonSerializer.Deserialize<List<Personaje>>(json);
                 }
             }

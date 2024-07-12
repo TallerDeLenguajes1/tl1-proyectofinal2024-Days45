@@ -36,7 +36,7 @@ namespace EspacioPersonaje
             foreach (Movimiento movimiento in Datito.Movimientos)
             {
                 detalles +=
-                    $" - {movimiento.Nombre} ({movimiento.TipoAtaque}, {movimiento.PotenciaMovimiento})\n";
+                    $" - {movimiento.Nombre} ({movimiento.TipoAtaque}, {movimiento.Poder})\n";
             }
 
             detalles +=

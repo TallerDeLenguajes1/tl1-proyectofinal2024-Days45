@@ -24,7 +24,7 @@ public class Caracteristicas
 
     public int CalcularAtaque(Movimiento movimiento)
     {
-        return Ataque * Nivel * movimiento.PotenciaMovimiento;
+        return Ataque * Nivel * movimiento.Poder;
     }
 
     // Método para calcular la efectividad

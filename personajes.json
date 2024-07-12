@@ -2,205 +2,40 @@
   {
     "Datito": {
       "Tipo": 0,
-      "Nombre": "dodrio",
+      "Nombre": "tandemaus",
       "Debilidades": [
         "Lucha"
       ],
       "Movimientos": [
         {
-          "Nombre": "Ataque R\u00E1pido",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 2
-        },
-        {
           "Nombre": "Golpe Cabeza",
           "TipoAtaque": 0,
-          "PotenciaMovimiento": 4
+          "Poder": 7
+        },
+        {
+          "Nombre": "Ataque R\u00E1pido",
+          "TipoAtaque": 0,
+          "Poder": 5
         },
         {
           "Nombre": "Canto",
           "TipoAtaque": 0,
-          "PotenciaMovimiento": 9
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 1,
-      "Defensa": 1,
-      "Velocidad": 5,
-      "Nivel": 1
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 0,
-      "Nombre": "azurill",
-      "Debilidades": [
-        "Lucha"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Ataque R\u00E1pido",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 5
-        },
-        {
-          "Nombre": "Golpe Cabeza",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 9
-        },
-        {
-          "Nombre": "Canto",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 10
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 8,
-      "Defensa": 10,
-      "Velocidad": 1,
-      "Nivel": 4
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 0,
-      "Nombre": "komala",
-      "Debilidades": [
-        "Lucha"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Ataque R\u00E1pido",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 5
-        },
-        {
-          "Nombre": "Golpe Cabeza",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 5
-        },
-        {
-          "Nombre": "Canto",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 4
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 8,
-      "Defensa": 1,
-      "Velocidad": 1,
-      "Nivel": 7
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 0,
-      "Nombre": "porygon-z",
-      "Debilidades": [
-        "Lucha"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Ataque R\u00E1pido",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 9
-        },
-        {
-          "Nombre": "Golpe Cabeza",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 4
-        },
-        {
-          "Nombre": "Canto",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 10
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 6,
-      "Defensa": 2,
-      "Velocidad": 1,
-      "Nivel": 5
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 0,
-      "Nombre": "dudunsparce",
-      "Debilidades": [
-        "Lucha"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Ataque R\u00E1pido",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 5
-        },
-        {
-          "Nombre": "Golpe Cabeza",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 5
-        },
-        {
-          "Nombre": "Canto",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 5
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 9,
-      "Defensa": 8,
-      "Velocidad": 5,
-      "Nivel": 6
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 0,
-      "Nombre": "munchlax",
-      "Debilidades": [
-        "Lucha"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Ataque R\u00E1pido",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 2
-        },
-        {
-          "Nombre": "Golpe Cabeza",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 3
-        },
-        {
-          "Nombre": "Canto",
-          "TipoAtaque": 0,
-          "PotenciaMovimiento": 4
+          "Poder": 5
         }
       ]
     },
     "Caracteristicas": {
       "Salud": 100,
       "Ataque": 3,
-      "Defensa": 4,
-      "Velocidad": 4,
-      "Nivel": 6
+      "Defensa": 9,
+      "Velocidad": 1,
+      "Nivel": 1
     }
   },
   {
     "Datito": {
       "Tipo": 14,
-      "Nombre": "roaring-moon",
+      "Nombre": "regidrago",
       "Debilidades": [
         "Hielo",
         "Dragon",
@@ -208,34 +43,102 @@
       ],
       "Movimientos": [
         {
-          "Nombre": "Golpe Drag\u00F3n",
-          "TipoAtaque": 14,
-          "PotenciaMovimiento": 4
-        },
-        {
           "Nombre": "Tormenta de Fuego",
           "TipoAtaque": 14,
-          "PotenciaMovimiento": 6
+          "Poder": 5
         },
         {
           "Nombre": "Cola Drag\u00F3n",
           "TipoAtaque": 14,
-          "PotenciaMovimiento": 10
+          "Poder": 7
+        },
+        {
+          "Nombre": "Golpe Drag\u00F3n",
+          "TipoAtaque": 14,
+          "Poder": 4
         }
       ]
     },
     "Caracteristicas": {
       "Salud": 100,
-      "Ataque": 8,
-      "Defensa": 4,
+      "Ataque": 10,
+      "Defensa": 9,
+      "Velocidad": 3,
+      "Nivel": 2
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 0,
+      "Nombre": "zigzagoon",
+      "Debilidades": [
+        "Lucha"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Canto",
+          "TipoAtaque": 0,
+          "Poder": 6
+        },
+        {
+          "Nombre": "Ataque R\u00E1pido",
+          "TipoAtaque": 0,
+          "Poder": 6
+        },
+        {
+          "Nombre": "Golpe Cabeza",
+          "TipoAtaque": 0,
+          "Poder": 5
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 6,
+      "Defensa": 5,
       "Velocidad": 1,
+      "Nivel": 2
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 14,
+      "Nombre": "axew",
+      "Debilidades": [
+        "Hielo",
+        "Dragon",
+        "Hada"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Cola Drag\u00F3n",
+          "TipoAtaque": 14,
+          "Poder": 10
+        },
+        {
+          "Nombre": "Golpe Drag\u00F3n",
+          "TipoAtaque": 14,
+          "Poder": 8
+        },
+        {
+          "Nombre": "Tormenta de Fuego",
+          "TipoAtaque": 14,
+          "Poder": 3
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 9,
+      "Defensa": 4,
+      "Velocidad": 5,
       "Nivel": 6
     }
   },
   {
     "Datito": {
       "Tipo": 0,
-      "Nombre": "purugly",
+      "Nombre": "skwovet",
       "Debilidades": [
         "Lucha"
       ],
@@ -243,26 +146,92 @@
         {
           "Nombre": "Ataque R\u00E1pido",
           "TipoAtaque": 0,
-          "PotenciaMovimiento": 10
+          "Poder": 3
         },
         {
           "Nombre": "Golpe Cabeza",
           "TipoAtaque": 0,
-          "PotenciaMovimiento": 9
+          "Poder": 7
         },
         {
           "Nombre": "Canto",
           "TipoAtaque": 0,
-          "PotenciaMovimiento": 7
+          "Poder": 7
         }
       ]
     },
     "Caracteristicas": {
       "Salud": 100,
-      "Ataque": 10,
-      "Defensa": 4,
+      "Ataque": 1,
+      "Defensa": 1,
+      "Velocidad": 10,
+      "Nivel": 6
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 0,
+      "Nombre": "whismur",
+      "Debilidades": [
+        "Lucha"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Ataque R\u00E1pido",
+          "TipoAtaque": 0,
+          "Poder": 5
+        },
+        {
+          "Nombre": "Golpe Cabeza",
+          "TipoAtaque": 0,
+          "Poder": 1
+        },
+        {
+          "Nombre": "Canto",
+          "TipoAtaque": 0,
+          "Poder": 7
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 5,
+      "Defensa": 6,
       "Velocidad": 3,
-      "Nivel": 2
+      "Nivel": 9
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 0,
+      "Nombre": "jigglypuff",
+      "Debilidades": [
+        "Lucha"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Ataque R\u00E1pido",
+          "TipoAtaque": 0,
+          "Poder": 4
+        },
+        {
+          "Nombre": "Golpe Cabeza",
+          "TipoAtaque": 0,
+          "Poder": 1
+        },
+        {
+          "Nombre": "Canto",
+          "TipoAtaque": 0,
+          "Poder": 8
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 5,
+      "Defensa": 2,
+      "Velocidad": 1,
+      "Nivel": 10
     }
   },
   {
@@ -276,34 +245,34 @@
       ],
       "Movimientos": [
         {
-          "Nombre": "Golpe Drag\u00F3n",
+          "Nombre": "Cola Drag\u00F3n",
           "TipoAtaque": 14,
-          "PotenciaMovimiento": 7
+          "Poder": 9
         },
         {
           "Nombre": "Tormenta de Fuego",
           "TipoAtaque": 14,
-          "PotenciaMovimiento": 5
+          "Poder": 6
         },
         {
-          "Nombre": "Cola Drag\u00F3n",
+          "Nombre": "Golpe Drag\u00F3n",
           "TipoAtaque": 14,
-          "PotenciaMovimiento": 7
+          "Poder": 6
         }
       ]
     },
     "Caracteristicas": {
       "Salud": 100,
-      "Ataque": 8,
-      "Defensa": 2,
-      "Velocidad": 10,
-      "Nivel": 7
+      "Ataque": 6,
+      "Defensa": 5,
+      "Velocidad": 8,
+      "Nivel": 10
     }
   },
   {
     "Datito": {
       "Tipo": 0,
-      "Nombre": "squawkabilly",
+      "Nombre": "kecleon",
       "Debilidades": [
         "Lucha"
       ],
@@ -311,26 +280,61 @@
         {
           "Nombre": "Ataque R\u00E1pido",
           "TipoAtaque": 0,
-          "PotenciaMovimiento": 6
+          "Poder": 10
         },
         {
           "Nombre": "Golpe Cabeza",
           "TipoAtaque": 0,
-          "PotenciaMovimiento": 10
+          "Poder": 3
         },
         {
           "Nombre": "Canto",
           "TipoAtaque": 0,
-          "PotenciaMovimiento": 2
+          "Poder": 10
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 3,
+      "Defensa": 6,
+      "Velocidad": 2,
+      "Nivel": 9
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 14,
+      "Nombre": "regidrago",
+      "Debilidades": [
+        "Hielo",
+        "Dragon",
+        "Hada"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Golpe Drag\u00F3n",
+          "TipoAtaque": 14,
+          "Poder": 8
+        },
+        {
+          "Nombre": "Cola Drag\u00F3n",
+          "TipoAtaque": 14,
+          "Poder": 1
+        },
+        {
+          "Nombre": "Tormenta de Fuego",
+          "TipoAtaque": 14,
+          "Poder": 9
         }
       ]
     },
     "Caracteristicas": {
       "Salud": 100,
       "Ataque": 6,
-      "Defensa": 6,
-      "Velocidad": 4,
-      "Nivel": 10
+      "Defensa": 10,
+      "Velocidad": 6,
+      "Nivel": 5
     }
   }
 ]

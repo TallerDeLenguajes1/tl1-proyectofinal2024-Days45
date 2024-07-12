@@ -36,7 +36,21 @@ class Program
         foreach (var personaje in personajes)
         {
             personaje.mostrarPersonaje();
+            Console.WriteLine("Presione una tecla para ver el siguiente personaje...");
+            Console.ReadKey(true);
         }
+
+        // Crear una instancia de la clase Eleccion
+        Eleccion eleccion = new Eleccion();
+
+        // Permitir al usuario elegir su Pokémon y el del rival
+        var (personajeUsuario, personajeRival) = eleccion.ElegirPersonajes(personajes);
+
+        Console.WriteLine("\nTu personaje:");
+        personajeUsuario.mostrarPersonaje();
+
+        Console.WriteLine("\nPersonaje del rival:");
+        personajeRival.mostrarPersonaje();
     }
 }
 
