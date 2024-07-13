@@ -12,12 +12,6 @@ public class Movimiento
 
     public Movimiento() { }
 
-    public Movimiento(string nombre, Elemento tipoAtaque)
-    {
-        Nombre = nombre;
-        TipoAtaque = tipoAtaque;
-    }
-
     public Movimiento(string nombre, Elemento tipoAtaque, int poder)
     {
         Nombre = nombre;

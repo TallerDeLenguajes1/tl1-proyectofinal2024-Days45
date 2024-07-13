@@ -41,8 +41,6 @@ public class PersonajesJson
                 using (var strReader = new StreamReader(archivoOpen))
                 {
                     string json = strReader.ReadToEnd();
-                    Console.WriteLine("JSON leído:");
-                    Console.WriteLine(json);
                     personajes = JsonSerializer.Deserialize<List<Personaje>>(json);
                 }
             }

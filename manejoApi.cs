@@ -10,16 +10,16 @@ namespace EspacioPersonaje
         private static readonly HttpClient client = new HttpClient();
         private Random random = new Random();
 
-        public async Task<string> ObtenerNombrePokemonAleatorioAsync()
+        public async Task<string> ObtenerNombrePokemonAleatorio()
         {
             // Obtener el número total de Pokémon
-            int totalPokemon = await ObtenerNumeroTotalPokemonAsync();
+            int totalPokemon = await ObtenerNumeroTotalPokemon();
 
             // Generar un ID aleatorio
             int idAleatorio = random.Next(1, totalPokemon + 1);
 
             // Obtener datos del Pokémon con el ID aleatorio
-            var pokemonData = await ObtenerPokemonPorIdAsync(idAleatorio);
+            var pokemonData = await ObtenerPokemonPorId(idAleatorio);
 
             // Obtener el nombre del Pokémon
             string nombrePokemon = pokemonData.name;
@@ -27,7 +27,7 @@ namespace EspacioPersonaje
             return nombrePokemon;
         }
 
-        public async Task<(string nombre, Elemento tipo)> ObtenerNombreYTipoPokemonAsync(
+        public async Task<(string nombre, Elemento tipo)> ObtenerNombreYTipoPokemon(
             string nombrePokemon
         )
         {
@@ -51,7 +51,7 @@ namespace EspacioPersonaje
             return (nombre, tipoEnum);
         }
 
-        private async Task<int> ObtenerNumeroTotalPokemonAsync()
+        private async Task<int> ObtenerNumeroTotalPokemon()
         {
             var response = await client.GetStringAsync(
                 "https://pokeapi.co/api/v2/pokemon-species?limit=1"
@@ -60,7 +60,7 @@ namespace EspacioPersonaje
             return data.count;
         }
 
-        private async Task<PokeJson> ObtenerPokemonPorIdAsync(int id)
+        private async Task<PokeJson> ObtenerPokemonPorId(int id)
         {
             var response = await client.GetStringAsync($"https://pokeapi.co/api/v2/pokemon/{id}");
             return JsonSerializer.Deserialize<PokeJson>(response);

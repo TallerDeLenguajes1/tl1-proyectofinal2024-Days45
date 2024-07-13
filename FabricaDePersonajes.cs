@@ -176,8 +176,8 @@ namespace EspacioPersonaje
 
             while (datosPokemon.nombre == null)
             {
-                nombrePokemon = await manejoApi.ObtenerNombrePokemonAleatorioAsync();
-                datosPokemon = await manejoApi.ObtenerNombreYTipoPokemonAsync(nombrePokemon);
+                nombrePokemon = await manejoApi.ObtenerNombrePokemonAleatorio();
+                datosPokemon = await manejoApi.ObtenerNombreYTipoPokemon(nombrePokemon);
             }
 
             if (!debilidadesPorTipo.ContainsKey(datosPokemon.tipo))
