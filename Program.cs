@@ -8,9 +8,12 @@ class Program
     static async Task Main(string[] args)
     {
         string nombreArchivo = "personajes.json";
+        string nombreArchivoPartida = "partida.json";
+        Personaje usuario = null;
+        Personaje rival = null;
         List<Personaje> personajes;
         Console.Clear();
-        
+
         Mensajes mensaje = new Mensajes();
         mensaje.titulo1();
         mensaje.titulo2();
@@ -47,10 +50,27 @@ class Program
 
                     Console.WriteLine("\nPersonaje del rival:");
                     personajeRival.mostrarPersonaje();
+                    Combate vs = new Combate(personajeUsuario, personajeRival);
+                    vs.Batalla(personajes);
                     break;
-
                 case 2:
-                    Console.WriteLine("Opción 2 seleccionada. Implementa tu lógica aquí.");
+                    if (PartidaJson.Existe(nombreArchivoPartida))
+                    {
+                        PartidaJson partidaGuardada = PartidaJson.LeerPartida(nombreArchivoPartida);
+                        usuario = partidaGuardada.Jugador;
+                        personajes = partidaGuardada.Rivales;
+                        rival = partidaGuardada.RivalActual;
+                        Console.WriteLine("\nTu personaje:");
+                        usuario.mostrarPersonaje();
+                        Console.WriteLine("\nPersonaje del rival:");
+                        rival.mostrarPersonaje();
+                        Combate vsGuardado = new Combate(usuario, rival);
+                        vsGuardado.Batalla(personajes); // Llamar al método Batalla para iniciar la batalla
+                    }
+                    else
+                    {
+                        Console.WriteLine("No hay ninguna partida guardada.");
+                    }
                     break;
 
                 default:
@@ -64,4 +84,3 @@ class Program
         }
     }
 }
-

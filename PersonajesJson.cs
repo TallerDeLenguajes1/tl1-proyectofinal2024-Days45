@@ -17,8 +17,8 @@ public class PersonajesJson
                 using (var strWriter = new StreamWriter(archivo))
                 {
                     string json = JsonSerializer.Serialize(personajes, opciones);
-                    Console.WriteLine("JSON guardado:");
-                    Console.WriteLine(json);
+                    //Console.WriteLine("JSON guardado:");
+                    //Console.WriteLine(json);
                     strWriter.WriteLine(json);
                     strWriter.Flush();
                 }

@@ -193,7 +193,7 @@ namespace EspacioPersonaje
                 if (tipoMovimiento == datosPokemon.tipo)
                 {
                      // Asignar un valor aleatorio a poder
-                    movimientosDelTipo.Add(new Movimiento(nombreMovimiento, tipoMovimiento, random.Next(1, 11)));
+                    movimientosDelTipo.Add(new Movimiento(nombreMovimiento, tipoMovimiento, random.Next(1, 6)));
                 }
             }
 

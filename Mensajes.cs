@@ -52,4 +52,32 @@ public class Mensajes
 ";
         ImprimirTituloCentrado(titulo2, ConsoleColor.Magenta);
     }
+
+    public void Ganador(Personaje ganador)
+    {
+        ImprimirTituloCentrado("¡Felicidades!", ConsoleColor.Green);
+        Console.WriteLine($"{ganador.Datito.Nombre} ha ganado todas las batallas.");
+
+        // Dibujo ASCII de un Pokémon
+        string pokemonAscii =
+            @"
+ /_/\  
+( o.o )
+ > ^ <
+";
+        Console.WriteLine(pokemonAscii);
+    }
+
+    public void Perdedor(Personaje perdedor)
+    {
+        ImprimirTituloCentrado("Lo siento, has perdido...", ConsoleColor.Red);
+        Console.WriteLine($"{perdedor.Datito.Nombre} no pudo ganar todas las batallas.");
+    }
+
+    public void RivalPerdedor(Personaje perdedor)
+    {
+        ImprimirTituloCentrado("Tu rival ha perdido...", ConsoleColor.DarkRed);
+        Console.WriteLine($"{perdedor.Datito.Nombre} no pudo ganar todas las batallas.");
+    }
+    
 }

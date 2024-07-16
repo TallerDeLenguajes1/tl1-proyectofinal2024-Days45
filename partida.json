@@ -1,0 +1,239 @@
+{
+  "Jugador": {
+    "Datito": {
+      "Tipo": 14,
+      "Nombre": "gabite",
+      "Debilidades": [
+        "Hielo",
+        "Dragon",
+        "Hada"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Tormenta de Fuego",
+          "TipoAtaque": 14,
+          "Poder": 4
+        },
+        {
+          "Nombre": "Golpe Drag\u00F3n",
+          "TipoAtaque": 14,
+          "Poder": 4
+        },
+        {
+          "Nombre": "Cola Drag\u00F3n",
+          "TipoAtaque": 14,
+          "Poder": 2
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 48,
+      "Ataque": 7,
+      "Defensa": 7,
+      "Velocidad": 4,
+      "Nivel": 7
+    }
+  },
+  "Rivales": [
+    {
+      "Datito": {
+        "Tipo": 0,
+        "Nombre": "swablu",
+        "Debilidades": [
+          "Lucha"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Golpe Cabeza",
+            "TipoAtaque": 0,
+            "Poder": 3
+          },
+          {
+            "Nombre": "Canto",
+            "TipoAtaque": 0,
+            "Poder": 4
+          },
+          {
+            "Nombre": "Ataque R\u00E1pido",
+            "TipoAtaque": 0,
+            "Poder": 1
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 9,
+        "Defensa": 1,
+        "Velocidad": 9,
+        "Nivel": 4
+      }
+    },
+    {
+      "Datito": {
+        "Tipo": 0,
+        "Nombre": "komala",
+        "Debilidades": [
+          "Lucha"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Ataque R\u00E1pido",
+            "TipoAtaque": 0,
+            "Poder": 2
+          },
+          {
+            "Nombre": "Golpe Cabeza",
+            "TipoAtaque": 0,
+            "Poder": 5
+          },
+          {
+            "Nombre": "Canto",
+            "TipoAtaque": 0,
+            "Poder": 1
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 5,
+        "Defensa": 3,
+        "Velocidad": 5,
+        "Nivel": 8
+      }
+    },
+    {
+      "Datito": {
+        "Tipo": 0,
+        "Nombre": "azurill",
+        "Debilidades": [
+          "Lucha"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Canto",
+            "TipoAtaque": 0,
+            "Poder": 1
+          },
+          {
+            "Nombre": "Golpe Cabeza",
+            "TipoAtaque": 0,
+            "Poder": 1
+          },
+          {
+            "Nombre": "Ataque R\u00E1pido",
+            "TipoAtaque": 0,
+            "Poder": 3
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 3,
+        "Defensa": 10,
+        "Velocidad": 3,
+        "Nivel": 10
+      }
+    },
+    {
+      "Datito": {
+        "Tipo": 14,
+        "Nombre": "roaring-moon",
+        "Debilidades": [
+          "Hielo",
+          "Dragon",
+          "Hada"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Cola Drag\u00F3n",
+            "TipoAtaque": 14,
+            "Poder": 4
+          },
+          {
+            "Nombre": "Tormenta de Fuego",
+            "TipoAtaque": 14,
+            "Poder": 1
+          },
+          {
+            "Nombre": "Golpe Drag\u00F3n",
+            "TipoAtaque": 14,
+            "Poder": 4
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 8,
+        "Defensa": 8,
+        "Velocidad": 5,
+        "Nivel": 10
+      }
+    },
+    {
+      "Datito": {
+        "Tipo": 0,
+        "Nombre": "jigglypuff",
+        "Debilidades": [
+          "Lucha"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Golpe Cabeza",
+            "TipoAtaque": 0,
+            "Poder": 5
+          },
+          {
+            "Nombre": "Ataque R\u00E1pido",
+            "TipoAtaque": 0,
+            "Poder": 3
+          },
+          {
+            "Nombre": "Canto",
+            "TipoAtaque": 0,
+            "Poder": 2
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 6,
+        "Defensa": 8,
+        "Velocidad": 2,
+        "Nivel": 7
+      }
+    }
+  ],
+  "RivalActual": {
+    "Datito": {
+      "Tipo": 0,
+      "Nombre": "meloetta-aria",
+      "Debilidades": [
+        "Lucha"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Golpe Cabeza",
+          "TipoAtaque": 0,
+          "Poder": 2
+        },
+        {
+          "Nombre": "Canto",
+          "TipoAtaque": 0,
+          "Poder": 4
+        },
+        {
+          "Nombre": "Ataque R\u00E1pido",
+          "TipoAtaque": 0,
+          "Poder": 1
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 5,
+      "Defensa": 5,
+      "Velocidad": 6,
+      "Nivel": 10
+    }
+  }
+}
