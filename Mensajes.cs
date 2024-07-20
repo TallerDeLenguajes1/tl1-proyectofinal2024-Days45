@@ -23,7 +23,8 @@ public class Mensajes
     {
         ImprimirTituloCentrado("1. Iniciar nueva partida", ConsoleColor.Yellow);
         ImprimirTituloCentrado("2. Continuar partida previa", ConsoleColor.Magenta);
-        ImprimirTituloCentrado("3. Salir", ConsoleColor.Red);
+        ImprimirTituloCentrado("3. Historial de Ganadores", ConsoleColor.Red);
+        ImprimirTituloCentrado("4. Salir", ConsoleColor.White);
         Console.ResetColor();
         ImprimirTituloCentrado("Seleccione una opción: ", ConsoleColor.DarkBlue);
     }

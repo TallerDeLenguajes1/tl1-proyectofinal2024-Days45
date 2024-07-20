@@ -26,7 +26,7 @@ namespace EspacioPersonaje
                         strWriter.Flush();
                     }
                 }
-                Console.WriteLine($"Datos guardados en '{nombreArchivo}'.");
+                //Console.WriteLine($"Datos guardados en '{nombreArchivo}'.");
             }
             catch (Exception e)
             {
@@ -67,5 +67,7 @@ namespace EspacioPersonaje
                 return false;
             }
         }
+
+        
     }
 }

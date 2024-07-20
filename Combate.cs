@@ -7,34 +7,31 @@ namespace EspacioPersonaje
     {
         private Personaje personajeUsuario;
         private Personaje personajeRival;
-        private Mensajes mensaje = new Mensajes();
+        private Mensajes mensaje;
+        private HistorialJson historialJson;
 
         public Combate(Personaje personajeUsuario, Personaje personajeRival)
         {
             this.personajeUsuario = personajeUsuario;
             this.personajeRival = personajeRival;
+            this.mensaje = new Mensajes();
+            this.historialJson = new HistorialJson();
         }
 
         public void Batalla(List<Personaje> personajes)
         {
-            
-            while (
-                personajeUsuario.Caracteristicas.Salud > 0
-                && personajeRival.Caracteristicas.Salud > 0
-            )
+            while (personajeUsuario.Caracteristicas.Salud > 0 && personajeRival.Caracteristicas.Salud > 0)
             {
-                Console.WriteLine("\nTurno del usuario:");
+                mensaje.ImprimirTituloCentrado("\nTurno del usuario:", ConsoleColor.Green);
                 TurnoUsuario();
 
                 if (personajeRival.Caracteristicas.Salud <= 0)
                 {
                     mensaje.RivalPerdedor(personajeRival);
                     BeneficiarPokemon(personajeUsuario);
-                    Console.WriteLine("¡Has ganado el combate!");
                     break;
                 }
-
-                Console.WriteLine("\nTurno del rival:");
+                mensaje.ImprimirTituloCentrado("\nTurno del rival:", ConsoleColor.Red);
                 TurnoRival();
 
                 if (personajeUsuario.Caracteristicas.Salud <= 0)
@@ -44,16 +41,14 @@ namespace EspacioPersonaje
                 }
             }
 
-            
-
-            // Mostrar el mensaje si se ganaron todas las batallas
             if (personajes.Count == 0)
             {
                 mensaje.Ganador(personajeUsuario);
+                historialJson.GuardarGanador(personajeUsuario, DateTime.Now, "ganadores.json");
             }
             else
             {
-                menuBatalla(personajes);
+                MenuBatalla(personajes);
             }
         }
 
@@ -70,20 +65,11 @@ namespace EspacioPersonaje
             while (seleccion < 1 || seleccion > personajeUsuario.Datito.Movimientos.Length)
             {
                 Console.Write("Selecciona el número del movimiento: ");
-                if (
-                    int.TryParse(Console.ReadLine(), out seleccion)
-                    && seleccion >= 1
-                    && seleccion <= personajeUsuario.Datito.Movimientos.Length
-                )
+                if (int.TryParse(Console.ReadLine(), out seleccion) && seleccion >= 1 && seleccion <= personajeUsuario.Datito.Movimientos.Length)
                 {
-                    Movimiento movimientoSeleccionado = personajeUsuario.Datito.Movimientos[
-                        seleccion - 1
-                    ];
-                    Console.WriteLine(
-                        $"Has elegido usar el movimiento: {movimientoSeleccionado.Nombre}"
-                    );
+                    Movimiento movimientoSeleccionado = personajeUsuario.Datito.Movimientos[seleccion - 1];
+                    Console.WriteLine($"Has elegido usar el movimiento: {movimientoSeleccionado.Nombre}");
 
-                    // Calcular el daño y actualizar la salud del Pokémon rival
                     double dano = personajeUsuario.Caracteristicas.CalcularDano(
                         personajeRival.Caracteristicas,
                         movimientoSeleccionado,
@@ -92,9 +78,7 @@ namespace EspacioPersonaje
                     );
 
                     Console.WriteLine($"¡El movimiento ha causado {dano} puntos de daño!");
-                    Console.WriteLine(
-                        $"La salud del Pokémon rival ahora es: {personajeRival.Caracteristicas.Salud}"
-                    );
+                    Console.WriteLine($"La salud del Pokémon rival ahora es: {personajeRival.Caracteristicas.Salud}");
 
                     break;
                 }
@@ -107,13 +91,9 @@ namespace EspacioPersonaje
 
         private void TurnoRival()
         {
-            // Elige un movimiento aleatorio del rival
-            var movimientoRival = personajeRival.Datito.Movimientos[
-                new Random().Next(personajeRival.Datito.Movimientos.Length)
-            ];
+            var movimientoRival = personajeRival.Datito.Movimientos[new Random().Next(personajeRival.Datito.Movimientos.Length)];
             Console.WriteLine($"El rival usa el movimiento: {movimientoRival.Nombre}");
 
-            // Calcular el daño y actualizar la salud del Pokémon usuario
             double dano = personajeRival.Caracteristicas.CalcularDano(
                 personajeUsuario.Caracteristicas,
                 movimientoRival,
@@ -122,24 +102,19 @@ namespace EspacioPersonaje
             );
 
             Console.WriteLine($"¡El movimiento del rival ha causado {dano} puntos de daño!");
-            Console.WriteLine(
-                $"La salud de tu Pokémon ahora es: {personajeUsuario.Caracteristicas.Salud}"
-            );
+            Console.WriteLine($"La salud de tu Pokémon ahora es: {personajeUsuario.Caracteristicas.Salud}");
         }
 
         private void BeneficiarPokemon(Personaje ganador)
         {
-            // Beneficiar al Pokémon que gana el combate
             ganador.Caracteristicas.ModificarSalud();
             ganador.Caracteristicas.AumentarEstadisticaAleatoria();
-
-            Console.WriteLine("¡Tu Pokémon ha ganado el combate y ha obtenido mejoras!");
-            Console.WriteLine("Mejoras del pokemon: ");
+            mensaje.ImprimirTituloCentrado("\n¡Tu Pokémon ha ganado el combate y ha obtenido mejoras!\n", ConsoleColor.Green);
+            mensaje.ImprimirTituloCentrado("Mejoras del pokemon: ", ConsoleColor.Green);
             ganador.Caracteristicas.MostrarEstadisticas();
-
         }
 
-        private void menuBatalla(List<Personaje> personajes)
+        private void MenuBatalla(List<Personaje> personajes)
         {
             if (!(personajeUsuario.Caracteristicas.Salud <= 0))
             {
@@ -147,16 +122,16 @@ namespace EspacioPersonaje
                 Eleccion eleccion = new Eleccion();
                 while (continuar)
                 {
-                    Console.WriteLine("¿Quieres:");
-                    Console.WriteLine("1. Guardar y continuar");
-                    Console.WriteLine("2. Guardar y salir");
-                    Console.WriteLine("3. Salir (sin guardar)");
+                    mensaje.ImprimirTituloCentrado("\n¿Quieres:", ConsoleColor.Yellow);
+                    mensaje.ImprimirTituloCentrado("1. Guardar y continuar", ConsoleColor.Yellow);
+                    mensaje.ImprimirTituloCentrado("2. Guardar y salir", ConsoleColor.Yellow);
+                    mensaje.ImprimirTituloCentrado("3. Salir (sin guardar)", ConsoleColor.Yellow);
                     string opcion = Console.ReadLine();
 
                     switch (opcion)
                     {
                         case "1":
-                            personajeRival = eleccion.ElegirNuevoRival(personajes); // Generar un nuevo rival aleatorio
+                            personajeRival = eleccion.ElegirNuevoRival(personajes);
                             PartidaJson partida1 = new PartidaJson
                             {
                                 Jugador = personajeUsuario,
@@ -164,13 +139,12 @@ namespace EspacioPersonaje
                                 RivalActual = personajeRival
                             };
                             PartidaJson.GuardarPartida(partida1, "partida.json");
-                            Console.WriteLine("Partida guardada con éxito.");
-                            Console.WriteLine("¡Comenzando un nuevo combate!");
-                            Batalla(personajes); 
-                            return; 
-
+                            Console.WriteLine("\nPartida guardada. Continuando con el siguiente combate...\n");
+                            Batalla(personajes);
+                            continuar = false;
+                            return;
                         case "2":
-                            personajeRival = eleccion.ElegirNuevoRival(personajes); // Generar un nuevo rival aleatorio
+                            personajeRival = eleccion.ElegirNuevoRival(personajes);
                             PartidaJson partida2 = new PartidaJson
                             {
                                 Jugador = personajeUsuario,
@@ -178,17 +152,16 @@ namespace EspacioPersonaje
                                 RivalActual = personajeRival
                             };
                             PartidaJson.GuardarPartida(partida2, "partida.json");
-                            Console.WriteLine("Partida guardada con éxito.");
-                            Console.WriteLine("¡Gracias por jugar!");
+                            Console.WriteLine("\nPartida guardada. Saliendo del juego...\n");
                             continuar = false;
-                            break;
+                            return;
                         case "3":
-                            // Salir sin guardar
-                            Console.WriteLine("¡Gracias por jugar!");
+                            personajeUsuario.Caracteristicas.DerrotarJugador();
+                            Console.WriteLine("\nHas salido del juego sin guardar. Tu Pokémon ha sido derrotado.\n");
                             continuar = false;
-                            break;
+                            return;
                         default:
-                            Console.WriteLine("Opción no válida. Intenta de nuevo.");
+                            Console.WriteLine("\nOpción no válida. Intenta nuevamente.\n");
                             break;
                     }
                 }

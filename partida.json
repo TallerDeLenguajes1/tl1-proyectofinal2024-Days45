@@ -1,61 +1,65 @@
 {
   "Jugador": {
     "Datito": {
-      "Tipo": 14,
-      "Nombre": "gabite",
+      "Tipo": 15,
+      "Nombre": "Sneasel",
       "Debilidades": [
-        "Hielo",
-        "Dragon",
+        "Lucha",
+        "Bicho",
         "Hada"
       ],
       "Movimientos": [
         {
-          "Nombre": "Tormenta de Fuego",
-          "TipoAtaque": 14,
-          "Poder": 4
+          "Nombre": "Onda Siniestra",
+          "TipoAtaque": 15,
+          "Poder": 3
         },
         {
-          "Nombre": "Golpe Drag\u00F3n",
-          "TipoAtaque": 14,
-          "Poder": 4
-        },
-        {
-          "Nombre": "Cola Drag\u00F3n",
-          "TipoAtaque": 14,
+          "Nombre": "Maldici\u00F3n",
+          "TipoAtaque": 15,
           "Poder": 2
+        },
+        {
+          "Nombre": "Golpe Siniestro",
+          "TipoAtaque": 15,
+          "Poder": 5
         }
       ]
     },
     "Caracteristicas": {
-      "Salud": 48,
-      "Ataque": 7,
-      "Defensa": 7,
-      "Velocidad": 4,
-      "Nivel": 7
+      "Salud": 100,
+      "Ataque": 6,
+      "Defensa": 5,
+      "Velocidad": 10,
+      "Nivel": 2
     }
   },
   "Rivales": [
     {
       "Datito": {
-        "Tipo": 0,
-        "Nombre": "swablu",
+        "Tipo": 12,
+        "Nombre": "Geodude",
         "Debilidades": [
-          "Lucha"
+          "Agua",
+          "Planta",
+          "Lucha",
+          "Tierra",
+          "Acero"
         ],
         "Movimientos": [
           {
-            "Nombre": "Golpe Cabeza",
-            "TipoAtaque": 0,
-            "Poder": 3
+            "Nombre": "Roca Afilada",
+            "TipoAtaque": 12,
+            "Poder": 1
           },
           {
-            "Nombre": "Canto",
-            "TipoAtaque": 0,
-            "Poder": 4
+            "Nombre": "Golpe Roca",
+            "TipoAtaque": 12,
+            "Poder": 1
           },
           {
-            "Nombre": "Ataque R\u00E1pido",
-            "TipoAtaque": 0,
+            "Nombre": "Terremoto",
+            "TipoAtaque": 12,
             "Poder": 1
           }
         ]
@@ -63,177 +67,252 @@
       "Caracteristicas": {
         "Salud": 100,
         "Ataque": 9,
-        "Defensa": 1,
-        "Velocidad": 9,
-        "Nivel": 4
+        "Defensa": 6,
+        "Velocidad": 1,
+        "Nivel": 3
       }
     },
     {
       "Datito": {
-        "Tipo": 0,
-        "Nombre": "komala",
+        "Tipo": 8,
+        "Nombre": "Sandshrew",
         "Debilidades": [
-          "Lucha"
+          "Agua",
+          "Planta",
+          "Hielo"
         ],
         "Movimientos": [
           {
-            "Nombre": "Ataque R\u00E1pido",
-            "TipoAtaque": 0,
+            "Nombre": "Terremoto",
+            "TipoAtaque": 8,
             "Poder": 2
           },
           {
-            "Nombre": "Golpe Cabeza",
-            "TipoAtaque": 0,
-            "Poder": 5
+            "Nombre": "Fisura",
+            "TipoAtaque": 8,
+            "Poder": 1
           },
           {
-            "Nombre": "Canto",
-            "TipoAtaque": 0,
+            "Nombre": "Excavar",
+            "TipoAtaque": 8,
             "Poder": 1
           }
         ]
       },
       "Caracteristicas": {
         "Salud": 100,
-        "Ataque": 5,
-        "Defensa": 3,
+        "Ataque": 2,
+        "Defensa": 10,
         "Velocidad": 5,
-        "Nivel": 8
+        "Nivel": 5
       }
     },
     {
       "Datito": {
-        "Tipo": 0,
-        "Nombre": "azurill",
+        "Tipo": 2,
+        "Nombre": "Squirtle",
         "Debilidades": [
-          "Lucha"
+          "Planta",
+          "Electrico"
         ],
         "Movimientos": [
           {
-            "Nombre": "Canto",
-            "TipoAtaque": 0,
+            "Nombre": "Burbuja",
+            "TipoAtaque": 2,
             "Poder": 1
           },
           {
-            "Nombre": "Golpe Cabeza",
-            "TipoAtaque": 0,
+            "Nombre": "Pistola Agua",
+            "TipoAtaque": 2,
             "Poder": 1
           },
           {
-            "Nombre": "Ataque R\u00E1pido",
-            "TipoAtaque": 0,
+            "Nombre": "Hidrobomba",
+            "TipoAtaque": 2,
             "Poder": 3
           }
         ]
       },
       "Caracteristicas": {
         "Salud": 100,
-        "Ataque": 3,
-        "Defensa": 10,
-        "Velocidad": 3,
-        "Nivel": 10
+        "Ataque": 7,
+        "Defensa": 1,
+        "Velocidad": 8,
+        "Nivel": 3
       }
     },
     {
       "Datito": {
-        "Tipo": 14,
-        "Nombre": "roaring-moon",
+        "Tipo": 6,
+        "Nombre": "Machop",
         "Debilidades": [
-          "Hielo",
-          "Dragon",
+          "Volador",
+          "Psiquico",
           "Hada"
         ],
         "Movimientos": [
           {
-            "Nombre": "Cola Drag\u00F3n",
-            "TipoAtaque": 14,
-            "Poder": 4
+            "Nombre": "Tackle",
+            "TipoAtaque": 6,
+            "Poder": 2
           },
           {
-            "Nombre": "Tormenta de Fuego",
-            "TipoAtaque": 14,
-            "Poder": 1
+            "Nombre": "Golpe Karate",
+            "TipoAtaque": 6,
+            "Poder": 2
           },
           {
-            "Nombre": "Golpe Drag\u00F3n",
-            "TipoAtaque": 14,
-            "Poder": 4
+            "Nombre": "Pu\u00F1o Fuego",
+            "TipoAtaque": 6,
+            "Poder": 2
           }
         ]
       },
       "Caracteristicas": {
         "Salud": 100,
         "Ataque": 8,
-        "Defensa": 8,
-        "Velocidad": 5,
-        "Nivel": 10
+        "Defensa": 7,
+        "Velocidad": 7,
+        "Nivel": 8
       }
     },
     {
       "Datito": {
-        "Tipo": 0,
-        "Nombre": "jigglypuff",
+        "Tipo": 15,
+        "Nombre": "Sneasel",
         "Debilidades": [
-          "Lucha"
+          "Lucha",
+          "Bicho",
+          "Hada"
         ],
         "Movimientos": [
           {
-            "Nombre": "Golpe Cabeza",
-            "TipoAtaque": 0,
+            "Nombre": "Onda Siniestra",
+            "TipoAtaque": 15,
+            "Poder": 2
+          },
+          {
+            "Nombre": "Maldici\u00F3n",
+            "TipoAtaque": 15,
             "Poder": 5
           },
           {
-            "Nombre": "Ataque R\u00E1pido",
-            "TipoAtaque": 0,
-            "Poder": 3
-          },
-          {
-            "Nombre": "Canto",
-            "TipoAtaque": 0,
-            "Poder": 2
+            "Nombre": "Golpe Siniestro",
+            "TipoAtaque": 15,
+            "Poder": 1
           }
         ]
       },
       "Caracteristicas": {
         "Salud": 100,
-        "Ataque": 6,
-        "Defensa": 8,
+        "Ataque": 1,
+        "Defensa": 1,
+        "Velocidad": 6,
+        "Nivel": 5
+      }
+    },
+    {
+      "Datito": {
+        "Tipo": 2,
+        "Nombre": "Squirtle",
+        "Debilidades": [
+          "Planta",
+          "Electrico"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Hidrobomba",
+            "TipoAtaque": 2,
+            "Poder": 5
+          },
+          {
+            "Nombre": "Burbuja",
+            "TipoAtaque": 2,
+            "Poder": 4
+          },
+          {
+            "Nombre": "Pistola Agua",
+            "TipoAtaque": 2,
+            "Poder": 3
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 5,
+        "Defensa": 2,
         "Velocidad": 2,
-        "Nivel": 7
+        "Nivel": 10
+      }
+    },
+    {
+      "Datito": {
+        "Tipo": 9,
+        "Nombre": "Pidgey",
+        "Debilidades": [
+          "Electrico",
+          "Hielo",
+          "Roca"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Golpe Ala",
+            "TipoAtaque": 9,
+            "Poder": 5
+          },
+          {
+            "Nombre": "Tornado",
+            "TipoAtaque": 9,
+            "Poder": 1
+          },
+          {
+            "Nombre": "Aire Afilado",
+            "TipoAtaque": 9,
+            "Poder": 1
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 3,
+        "Defensa": 4,
+        "Velocidad": 4,
+        "Nivel": 6
       }
     }
   ],
   "RivalActual": {
     "Datito": {
-      "Tipo": 0,
-      "Nombre": "meloetta-aria",
+      "Tipo": 2,
+      "Nombre": "Squirtle",
       "Debilidades": [
-        "Lucha"
+        "Planta",
+        "Electrico"
       ],
       "Movimientos": [
         {
-          "Nombre": "Golpe Cabeza",
-          "TipoAtaque": 0,
+          "Nombre": "Burbuja",
+          "TipoAtaque": 2,
+          "Poder": 3
+        },
+        {
+          "Nombre": "Hidrobomba",
+          "TipoAtaque": 2,
           "Poder": 2
         },
         {
-          "Nombre": "Canto",
-          "TipoAtaque": 0,
-          "Poder": 4
-        },
-        {
-          "Nombre": "Ataque R\u00E1pido",
-          "TipoAtaque": 0,
-          "Poder": 1
+          "Nombre": "Pistola Agua",
+          "TipoAtaque": 2,
+          "Poder": 3
         }
       ]
     },
     "Caracteristicas": {
       "Salud": 100,
       "Ataque": 5,
-      "Defensa": 5,
-      "Velocidad": 6,
-      "Nivel": 10
+      "Defensa": 6,
+      "Velocidad": 5,
+      "Nivel": 6
     }
   }
 }

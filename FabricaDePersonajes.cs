@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EspacioPersonaje
@@ -7,12 +8,14 @@ namespace EspacioPersonaje
     public class FabricaDePersonajes
     {
         private Random random = new Random();
+        private Mensajes mensaje=new Mensajes();
         private ManejoApi manejoApi = new ManejoApi();
         private Dictionary<Elemento, List<Elemento>> debilidadesPorTipo = new Dictionary<
             Elemento,
             List<Elemento>
         >
         {
+            // Definición de debilidades por tipo
             {
                 Elemento.Fuego,
                 new List<Elemento> { Elemento.Agua, Elemento.Tierra, Elemento.Roca }
@@ -100,90 +103,109 @@ namespace EspacioPersonaje
                 new List<Elemento> { Elemento.Veneno, Elemento.Acero }
             }
         };
-
         private List<(string Nombre, Elemento Tipo)> movimientos = new List<(string, Elemento)>
         {
-            // Movimientos de tipo Fuego
+            // Definición de movimientos por tipo
             ("Lanzallamas", Elemento.Fuego),
             ("Ascuas", Elemento.Fuego),
             ("Pirotecnia", Elemento.Fuego),
-            // Movimientos de tipo Agua
             ("Pistola Agua", Elemento.Agua),
             ("Burbuja", Elemento.Agua),
             ("Hidrobomba", Elemento.Agua),
-            // Movimientos de tipo Planta
             ("Latigo Cepa", Elemento.Planta),
             ("Hoja Afilada", Elemento.Planta),
             ("Rayo Solar", Elemento.Planta),
-            // Movimientos de tipo Eléctrico
             ("Impactrueno", Elemento.Electrico),
             ("Rayo", Elemento.Electrico),
             ("Chispa", Elemento.Electrico),
-            // Movimientos de tipo Normal
             ("Ataque Rápido", Elemento.Normal),
             ("Golpe Cabeza", Elemento.Normal),
             ("Canto", Elemento.Normal),
-            // Movimientos de tipo Hielo
             ("Ventisca", Elemento.Hielo),
             ("Gelido", Elemento.Hielo),
             ("Alud", Elemento.Hielo),
-            // Movimientos de tipo Lucha
             ("Puño Fuego", Elemento.Lucha),
             ("Golpe Karate", Elemento.Lucha),
             ("Tackle", Elemento.Lucha),
-            // Movimientos de tipo Veneno
             ("Dardo Veneno", Elemento.Veneno),
             ("Toxina", Elemento.Veneno),
             ("Mordisco", Elemento.Veneno),
-            // Movimientos de tipo Volador
             ("Aire Afilado", Elemento.Volador),
             ("Golpe Ala", Elemento.Volador),
             ("Tornado", Elemento.Volador),
-            // Movimientos de tipo Psíquico
             ("Psicorrayo", Elemento.Psiquico),
             ("Telepatía", Elemento.Psiquico),
             ("Confusión", Elemento.Psiquico),
-            // Movimientos de tipo Bicho
             ("Picadura", Elemento.Bicho),
             ("Golpe Colmena", Elemento.Bicho),
             ("Red de Araña", Elemento.Bicho),
-            // Movimientos de tipo Roca
             ("Golpe Roca", Elemento.Roca),
             ("Terremoto", Elemento.Roca),
             ("Roca Afilada", Elemento.Roca),
-            // Movimientos de tipo Fantasma
             ("Lamento", Elemento.Fantasma),
             ("Golpe Fantasma", Elemento.Fantasma),
             ("Onda Fantasma", Elemento.Fantasma),
-            // Movimientos de tipo Acero
             ("Golpe Acero", Elemento.Acero),
             ("Lanzamiento", Elemento.Acero),
             ("Cuchilla Giratoria", Elemento.Acero),
-            // Movimientos de tipo Dragón
             ("Golpe Dragón", Elemento.Dragon),
             ("Tormenta de Fuego", Elemento.Dragon),
             ("Cola Dragón", Elemento.Dragon),
-            // Movimientos de tipo Siniestro
             ("Golpe Siniestro", Elemento.Siniestro),
             ("Maldición", Elemento.Siniestro),
-            ("Onda Siniestra", Elemento.Siniestro)
+            ("Onda Siniestra", Elemento.Siniestro),
+            ("Beso Amoroso", Elemento.Hada),
+            ("Carantoña", Elemento.Hada),
+            ("Destello Magico", Elemento.Hada),
+            ("Terremoto", Elemento.Tierra),
+            ("Fisura", Elemento.Tierra),
+            ("Excavar", Elemento.Tierra)
+        };
+        private Dictionary<string, Elemento> pokemonsPorTipo = new Dictionary<string, Elemento>
+        {
+            { "Pikachu", Elemento.Electrico },
+            { "Charmander", Elemento.Fuego },
+            { "Squirtle", Elemento.Agua },
+            { "Bulbasaur", Elemento.Planta },
+            { "Jigglypuff", Elemento.Normal },
+            { "Machop", Elemento.Lucha },
+            { "Gastly", Elemento.Fantasma },
+            { "Geodude", Elemento.Roca },
+            { "Pidgey", Elemento.Volador },
+            { "Abra", Elemento.Psiquico },
+            { "Caterpie", Elemento.Bicho },
+            { "Sandshrew", Elemento.Tierra },
+            { "Ekans", Elemento.Veneno },
+            { "Dratini", Elemento.Dragon },
+            { "Sneasel", Elemento.Siniestro },
+            { "Magnemite", Elemento.Acero },
+            { "Clefairy", Elemento.Hada },
+            { "Lapras", Elemento.Hielo }
         };
 
-        public async Task<Personaje> CrearPersonajeAsync()
+        public async Task<Personaje> CrearPersonaje(bool usarApi)
         {
             string nombrePokemon = null;
             (string nombre, Elemento tipo) datosPokemon = (null, Elemento.Desconocido);
 
-            while (datosPokemon.nombre == null)
+            if (usarApi)
             {
-                nombrePokemon = await manejoApi.ObtenerNombrePokemonAleatorio();
-                datosPokemon = await manejoApi.ObtenerNombreYTipoPokemon(nombrePokemon);
+                while (datosPokemon.nombre == null)
+                {
+                    nombrePokemon = await manejoApi.ObtenerNombrePokemonAleatorio();
+                    datosPokemon = await manejoApi.ObtenerNombreYTipoPokemon(nombrePokemon);
+                }
+            }
+            else
+            {
+                datosPokemon = ObtenerPokemonDesdeDiccionarioAleatorio();
             }
 
             if (!debilidadesPorTipo.ContainsKey(datosPokemon.tipo))
             {
                 throw new ArgumentException($"Tipo de Pokémon no válido: {datosPokemon.tipo}");
             }
+
             List<Elemento> debilidadesElemento = debilidadesPorTipo[datosPokemon.tipo];
             List<string> debilidades = debilidadesElemento.ConvertAll(d => d.ToString());
 
@@ -192,8 +214,10 @@ namespace EspacioPersonaje
             {
                 if (tipoMovimiento == datosPokemon.tipo)
                 {
-                     // Asignar un valor aleatorio a poder
-                    movimientosDelTipo.Add(new Movimiento(nombreMovimiento, tipoMovimiento, random.Next(1, 6)));
+                    // Asignar un valor aleatorio a poder
+                    movimientosDelTipo.Add(
+                        new Movimiento(nombreMovimiento, tipoMovimiento, random.Next(1, 6))
+                    );
                 }
             }
 
@@ -222,6 +246,29 @@ namespace EspacioPersonaje
             );
 
             return new Personaje(datos, caracteristicas);
+        }
+
+        private (string nombre, Elemento tipo) ObtenerPokemonDesdeDiccionarioAleatorio()
+        {
+            // Obtiene un Pokémon aleatorio del diccionario local
+            var pokemonAleatorio = pokemonsPorTipo.ElementAt(random.Next(pokemonsPorTipo.Count));
+            return (pokemonAleatorio.Key, pokemonAleatorio.Value);
+        }
+
+        public async Task<List<Personaje>> eleccionApi()
+        {
+            mensaje.ImprimirTituloCentrado(
+                "¿Deseas usar la API para crear personajes? (S/N): ",
+                ConsoleColor.DarkYellow
+            );
+            Console.WriteLine();
+            bool usarApi = Console.ReadLine().Trim().ToUpper() == "S";
+            List<Personaje> personajes = new List<Personaje>();
+            for (int i = 0; i < 10; i++)
+            {
+                personajes.Add(await CrearPersonaje(usarApi));
+            }
+            return personajes;
         }
     }
 }

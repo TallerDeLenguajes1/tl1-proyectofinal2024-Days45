@@ -21,7 +21,7 @@ public enum Elemento
     Siniestro,
     Acero,
     Hada,
-    Desconocido // Valor por defecto para manejar casos no convertidos
+    Desconocido
 }
 
 public class Datos

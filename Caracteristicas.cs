@@ -73,7 +73,7 @@ public class Caracteristicas
     }
 
     // Método para calcular el daño
-    public double CalcularDano(
+    public int CalcularDano(
         Caracteristicas defensor,
         Movimiento movimiento,
         Datos datosAtacante,
@@ -87,22 +87,20 @@ public class Caracteristicas
         double danoProvocado = Math.Max(0, danoBase);
 
         string tipoAtaqueStr = movimiento.TipoAtaque.ToString();
-        // Si el tipo de ataque del movimiento es igual a la debilidad del defensor, el daño se duplica
+
         if (datosDefensor.Debilidades.Contains(movimiento.TipoAtaque.ToString()))
         {
             danoProvocado *= 2;
         }
 
-        // Si el defensor esquiva el ataque, el daño se reduce a 0
         if (defensor.EsquivarAtaque(this))
         {
             danoProvocado = 0;
         }
 
-        // Actualizar la salud del Pokémon que defiende
-        defensor.ActualizarSalud(danoProvocado);
+        defensor.ActualizarSalud((int)Math.Round(danoProvocado));
 
-        return danoProvocado;
+        return (int)Math.Round(danoProvocado);
     }
 
     public void ModificarSalud()
@@ -123,23 +121,25 @@ public class Caracteristicas
         switch (estadistica)
         {
             case 1:
-                Ataque += 1;
+
+                Ataque = Math.Min(10, Ataque + 1);
                 break;
             case 2:
-                Defensa += 1;
+                Defensa = Math.Min(10, Defensa + 1);
                 break;
             case 3:
-                Velocidad += 1;
+                Velocidad = Math.Min(10, Velocidad + 1);
                 break;
         }
     }
 
     public void MostrarEstadisticas()
     {
-        Console.WriteLine($"Nivel: {Nivel}");
-        Console.WriteLine($"Salud: {Salud}");
-        Console.WriteLine($"Ataque: {Ataque}");
-        Console.WriteLine($"Defensa: {Defensa}");
-        Console.WriteLine($"Velocidad: {Velocidad}");   
+        Mensajes mensaje = new Mensajes();
+        mensaje.ImprimirTituloCentrado($"Nivel: {Nivel}", ConsoleColor.Green);
+        mensaje.ImprimirTituloCentrado($"Salud: {Salud}", ConsoleColor.Green);
+        mensaje.ImprimirTituloCentrado($"Ataque: {Ataque}", ConsoleColor.Green);
+        mensaje.ImprimirTituloCentrado($"Defensa: {Defensa}", ConsoleColor.Green);
+        mensaje.ImprimirTituloCentrado($"Velocidad: {Velocidad}", ConsoleColor.Green);
     }
 }
