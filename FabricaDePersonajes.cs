@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,7 +8,7 @@ namespace EspacioPersonaje
     public class FabricaDePersonajes
     {
         private Random random = new Random();
-        private Mensajes mensaje=new Mensajes();
+        private Mensajes mensaje = new Mensajes();
         private ManejoApi manejoApi = new ManejoApi();
         private Dictionary<Elemento, List<Elemento>> debilidadesPorTipo = new Dictionary<
             Elemento,
@@ -264,10 +264,52 @@ namespace EspacioPersonaje
             Console.WriteLine();
             bool usarApi = Console.ReadLine().Trim().ToUpper() == "S";
             List<Personaje> personajes = new List<Personaje>();
-            for (int i = 0; i < 10; i++)
+
+            if (usarApi)
             {
-                personajes.Add(await CrearPersonaje(usarApi));
+                int intentos = 0;
+                bool apiConectada = false;
+
+                while (intentos < 3 && !apiConectada)
+                {
+                    try
+                    {
+                        for (int i = 0; i < 10; i++)
+                        {
+                            personajes.Add(await CrearPersonaje(usarApi));
+                        }
+                        apiConectada = true;
+                    }
+                    catch (HttpRequestException)
+                    {
+                        intentos++;
+                        if (intentos < 3)
+                        {
+                            Console.WriteLine("Intentando reconectar a la API...");
+                            await Task.Delay(500); // Pequeño retraso antes de reintentar
+                        }
+                    }
+                }
+
+                if (!apiConectada)
+                {
+                    Console.WriteLine(
+                        "No se pudo conectar a la API después de 3 intentos. Generando personajes con datos precargados..."
+                    );
+                    for (int i = 0; i < 10; i++)
+                    {
+                        personajes.Add(await CrearPersonaje(false));
+                    }
+                }
             }
+            else
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    personajes.Add(await CrearPersonaje(false));
+                }
+            }
+
             return personajes;
         }
     }

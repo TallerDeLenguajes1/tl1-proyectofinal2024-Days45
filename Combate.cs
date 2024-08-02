@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 
 namespace EspacioPersonaje
@@ -157,7 +157,7 @@ namespace EspacioPersonaje
                             return;
                         case "3":
                             personajeUsuario.Caracteristicas.DerrotarJugador();
-                            Console.WriteLine("\nHas salido del juego sin guardar. Tu Pokémon ha sido derrotado.\n");
+                            Console.WriteLine("\nHas salido del juego sin guardar. Tu Pokémon perdio.\n");
                             continuar = false;
                             return;
                         default:

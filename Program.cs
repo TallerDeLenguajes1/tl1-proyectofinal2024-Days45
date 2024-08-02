@@ -2,7 +2,7 @@
 {
     class Program
     {
-        static async Task Main(string[] args) //sale subrayado amarrillo el main
+        static async Task Main(string[] args) 
         {
             Mensajes mensaje = new Mensajes();
             Eleccion eleccion = new Eleccion();
@@ -18,7 +18,7 @@
             }
             else
             {
-                personajes = await fabrica.eleccionApi(); //error aqui
+                personajes = await fabrica.eleccionApi(); 
                 PersonajesJson.GuardarPersonajes(personajes, nombreArchivo);
             }
 
