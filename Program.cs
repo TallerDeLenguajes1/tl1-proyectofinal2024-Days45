@@ -1,43 +1,60 @@
-﻿namespace EspacioPersonaje
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
+
+namespace EspacioPersonaje
 {
     class Program
     {
-        static async Task Main(string[] args) 
+        static async Task Main(string[] args)
         {
+            // Inicialización de instancias para manejar mensajes, elecciones y la fábrica de personajes
             Mensajes mensaje = new Mensajes();
             Eleccion eleccion = new Eleccion();
             FabricaDePersonajes fabrica = new FabricaDePersonajes();
+
+            // Definición de nombres de archivos para personajes y partidas guardadas
             string nombreArchivo = "personajes.json";
             string nombreArchivoPartida = "partida.json";
-            Personaje usuario = null;
-            Personaje rival = null;
-            List<Personaje> personajes;
+
+            Personaje usuario = null; // Variable para almacenar el personaje del usuario
+            Personaje rival = null; // Variable para almacenar el personaje rival
+            List<Personaje> personajes; // Lista de personajes disponibles
+
+            // Verifica si el archivo de personajes existe y no está vacío
             if (PersonajesJson.Existe(nombreArchivo))
             {
+                // Si el archivo existe, lee los personajes desde el archivo
                 personajes = PersonajesJson.LeerPersonajes(nombreArchivo);
             }
             else
             {
-                personajes = await fabrica.eleccionApi(); 
+                // Si el archivo no existe, solicita nuevos personajes de la API y guarda en el archivo
+                personajes = await fabrica.eleccionApi();
                 PersonajesJson.GuardarPersonajes(personajes, nombreArchivo);
             }
 
             int opcion;
-            bool continuar = true;
+            bool continuar = true; // Bandera para continuar el bucle de menú
+
             do
             {
-                Console.Clear();
-                mensaje.titulo1();
-                mensaje.titulo2();
-                mensaje.MostrarOpciones();
+                Console.Clear(); // Limpia la consola
+                mensaje.titulo1(); // Muestra el primer título del menú
+                mensaje.titulo2(); // Muestra el segundo título del menú
+                mensaje.MostrarOpciones(); // Muestra las opciones del menú
 
+                // Lee y procesa la opción del usuario
                 if (int.TryParse(Console.ReadLine(), out opcion))
                 {
                     switch (opcion)
                     {
                         case 1:
+                            // Opción 1: Elegir personajes y comenzar un combate
                             if (personajes.Count < 10)
                             {
+                                // Si hay menos de 10 personajes, actualiza la lista desde la API
                                 personajes = await fabrica.eleccionApi();
                                 PersonajesJson.GuardarPersonajes(personajes, nombreArchivo);
                             }
@@ -47,6 +64,7 @@
 
                             if (personajeUsuario != null && personajeRival != null)
                             {
+                                // Muestra los personajes seleccionados y realiza la batalla
                                 Console.WriteLine("\nTu personaje:");
                                 personajeUsuario.mostrarPersonaje();
                                 Console.WriteLine("\nPersonaje del rival:");
@@ -64,6 +82,7 @@
                             break;
 
                         case 2:
+                            // Opción 2: Cargar una partida guardada y continuar el combate
                             if (PartidaJson.Existe(nombreArchivoPartida))
                             {
                                 PartidaJson partidaGuardada = PartidaJson.LeerPartida(
@@ -75,6 +94,7 @@
 
                                 if (usuario != null && rival != null)
                                 {
+                                    // Muestra el estado actual y realiza el combate
                                     Console.WriteLine("\nTu personaje:");
                                     usuario.mostrarPersonaje();
                                     Console.WriteLine("\nPersonaje del rival:");
@@ -97,6 +117,7 @@
                             break;
 
                         case 3:
+                            // Opción 3: Mostrar el historial de ganadores
                             HistorialJson historialJson = new HistorialJson();
                             List<Ganador> ganadores =
                                 historialJson.LeerGanadores("ganadores.json")
@@ -104,11 +125,17 @@
 
                             if (ganadores != null && ganadores.Count > 0)
                             {
-                                Console.WriteLine("Historial de ganadores:");
+                                mensaje.ImprimirTituloCentrado(
+                                    "Historial de ganadores:\n",
+                                    ConsoleColor.Yellow
+                                );
                                 for (int i = 0; i < ganadores.Count; i++)
                                 {
-                                    Console.WriteLine(
-                                        $"{i + 1}. Nombre: {ganadores[i].personajeGanador.Datito.Nombre}, Tipo: {ganadores[i].personajeGanador.Datito.Tipo}, Fecha: {ganadores[i].fechaVictoria}"
+                                    var ganador = ganadores[i];
+                                    string textoGanador =$"{i + 1}. Nombre: {ganador.personajeGanador.Datito.Nombre}, Tipo: {ganador.personajeGanador.Datito.Tipo}, Fecha: {ganador.fechaVictoria}";
+                                    mensaje.ImprimirTituloCentrado(
+                                        textoGanador,
+                                        ConsoleColor.Yellow
                                     );
                                 }
                             }
@@ -119,6 +146,7 @@
                             break;
 
                         case 4:
+                            // Opción 4: Salir del programa
                             Console.WriteLine("Saliendo del programa...");
                             continuar = false;
                             break;
@@ -138,7 +166,7 @@
                     Console.WriteLine("Presiona cualquier tecla para continuar...");
                     Console.ReadKey();
                 }
-            } while (continuar);
+            } while (continuar); // Repite el bucle hasta que continuar sea false
         }
     }
 }

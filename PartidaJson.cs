@@ -2,14 +2,30 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace EspacioPersonaje
 {
     public class PartidaJson
     {
-        public Personaje Jugador { get; set; }
-        public List<Personaje> Rivales { get; set; }
-        public Personaje RivalActual { get; set; }
+        // Propiedades privadas con getter y setter privados
+        [JsonInclude] // Permite que estas propiedades sean serializadas y deserializadas a través de JSON
+        public Personaje Jugador { get; private set; }
+
+        [JsonInclude] // Permite que estas propiedades sean serializadas y deserializadas a través de JSON
+        public List<Personaje> Rivales { get; private set; }
+
+        [JsonInclude] // Permite que estas propiedades sean serializadas y deserializadas a través de JSON
+        public Personaje RivalActual { get; private set; }
+
+        // Método para guardar una partida en un archivo JSON
+        [JsonConstructor]
+        public PartidaJson(Personaje jugador, List<Personaje> rivales, Personaje rivalActual)
+        {
+            Jugador = jugador;
+            Rivales = rivales;
+            RivalActual = rivalActual;
+        }
 
         public static void GuardarPartida(PartidaJson partida, string nombreArchivo)
         {
@@ -21,12 +37,10 @@ namespace EspacioPersonaje
                     using (var strWriter = new StreamWriter(archivo))
                     {
                         string json = JsonSerializer.Serialize(partida, opciones);
-                        //Console.WriteLine("JSON guardado:");
                         strWriter.WriteLine(json);
                         strWriter.Flush();
                     }
                 }
-                //Console.WriteLine($"Datos guardados en '{nombreArchivo}'.");
             }
             catch (Exception e)
             {
@@ -34,6 +48,7 @@ namespace EspacioPersonaje
             }
         }
 
+        // Método para leer una partida desde un archivo JSON
         public static PartidaJson LeerPartida(string nombreArchivo)
         {
             PartidaJson partida = null;
@@ -55,6 +70,7 @@ namespace EspacioPersonaje
             return partida;
         }
 
+        // Método para verificar si el archivo existe y no está vacío
         public static bool Existe(string nombreArchivo)
         {
             try
@@ -67,7 +83,5 @@ namespace EspacioPersonaje
                 return false;
             }
         }
-
-        
     }
 }

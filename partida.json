@@ -1,241 +1,355 @@
 {
   "Jugador": {
     "Datito": {
-      "Tipo": 14,
-      "Nombre": "bagon",
+      "Tipo": 13,
+      "Nombre": "Gastly",
       "Debilidades": [
-        "Hielo",
-        "Dragon",
-        "Hada"
+        "Fantasma",
+        "Siniestro"
+      ],
+      "Resistencias": [
+        "Bicho",
+        "Veneno",
+        "Lucha",
+        "Normal"
       ],
       "Movimientos": [
         {
-          "Nombre": "Cola Drag\u00F3n",
-          "TipoAtaque": 14,
-          "Poder": 1
+          "Nombre": "Onda Fantasma",
+          "TipoAtaque": 13,
+          "Poder": 2
         },
         {
-          "Nombre": "Tormenta de Fuego",
-          "TipoAtaque": 14,
-          "Poder": 5
-        },
-        {
-          "Nombre": "Golpe Drag\u00F3n",
-          "TipoAtaque": 14,
+          "Nombre": "Golpe Fantasma",
+          "TipoAtaque": 13,
           "Poder": 3
+        },
+        {
+          "Nombre": "Lamento",
+          "TipoAtaque": 13,
+          "Poder": 5
         }
       ]
     },
     "Caracteristicas": {
-      "Salud": 42,
-      "Ataque": 5,
-      "Defensa": 4,
-      "Velocidad": 5,
-      "Nivel": 5
+      "Salud": 83.75,
+      "Ataque": 4,
+      "Defensa": 3,
+      "Velocidad": 10,
+      "Nivel": 3
     }
   },
   "Rivales": [
     {
       "Datito": {
-        "Tipo": 0,
-        "Nombre": "patrat",
+        "Tipo": 13,
+        "Nombre": "Gastly",
         "Debilidades": [
-          "Lucha"
+          "Fantasma",
+          "Siniestro"
+        ],
+        "Resistencias": [
+          "Bicho",
+          "Veneno",
+          "Lucha",
+          "Normal"
         ],
         "Movimientos": [
           {
-            "Nombre": "Canto",
-            "TipoAtaque": 0,
+            "Nombre": "Golpe Fantasma",
+            "TipoAtaque": 13,
             "Poder": 5
           },
           {
-            "Nombre": "Golpe Cabeza",
-            "TipoAtaque": 0,
-            "Poder": 5
-          },
-          {
-            "Nombre": "Ataque R\u00E1pido",
-            "TipoAtaque": 0,
-            "Poder": 2
-          }
-        ]
-      },
-      "Caracteristicas": {
-        "Salud": 100,
-        "Ataque": 4,
-        "Defensa": 2,
-        "Velocidad": 6,
-        "Nivel": 1
-      }
-    },
-    {
-      "Datito": {
-        "Tipo": 14,
-        "Nombre": "gabite",
-        "Debilidades": [
-          "Hielo",
-          "Dragon",
-          "Hada"
-        ],
-        "Movimientos": [
-          {
-            "Nombre": "Cola Drag\u00F3n",
-            "TipoAtaque": 14,
+            "Nombre": "Lamento",
+            "TipoAtaque": 13,
             "Poder": 1
           },
           {
-            "Nombre": "Golpe Drag\u00F3n",
-            "TipoAtaque": 14,
-            "Poder": 3
-          },
-          {
-            "Nombre": "Tormenta de Fuego",
-            "TipoAtaque": 14,
-            "Poder": 4
-          }
-        ]
-      },
-      "Caracteristicas": {
-        "Salud": 100,
-        "Ataque": 7,
-        "Defensa": 3,
-        "Velocidad": 4,
-        "Nivel": 9
-      }
-    },
-    {
-      "Datito": {
-        "Tipo": 0,
-        "Nombre": "linoone",
-        "Debilidades": [
-          "Lucha"
-        ],
-        "Movimientos": [
-          {
-            "Nombre": "Canto",
-            "TipoAtaque": 0,
-            "Poder": 3
-          },
-          {
-            "Nombre": "Golpe Cabeza",
-            "TipoAtaque": 0,
-            "Poder": 2
-          },
-          {
-            "Nombre": "Ataque R\u00E1pido",
-            "TipoAtaque": 0,
-            "Poder": 4
+            "Nombre": "Onda Fantasma",
+            "TipoAtaque": 13,
+            "Poder": 5
           }
         ]
       },
       "Caracteristicas": {
         "Salud": 100,
         "Ataque": 5,
-        "Defensa": 10,
-        "Velocidad": 4,
-        "Nivel": 7
+        "Defensa": 6,
+        "Velocidad": 5,
+        "Nivel": 4
       }
     },
     {
       "Datito": {
-        "Tipo": 0,
-        "Nombre": "komala",
+        "Tipo": 11,
+        "Nombre": "Caterpie",
         "Debilidades": [
-          "Lucha"
+          "Fuego",
+          "Volador",
+          "Roca"
+        ],
+        "Resistencias": [
+          "Bicho",
+          "Lucha",
+          "Planta",
+          "Volador"
         ],
         "Movimientos": [
           {
-            "Nombre": "Golpe Cabeza",
-            "TipoAtaque": 0,
+            "Nombre": "Golpe Colmena",
+            "TipoAtaque": 11,
             "Poder": 3
           },
           {
-            "Nombre": "Canto",
-            "TipoAtaque": 0,
-            "Poder": 4
+            "Nombre": "Red de Ara\u00F1a",
+            "TipoAtaque": 11,
+            "Poder": 3
           },
           {
-            "Nombre": "Ataque R\u00E1pido",
-            "TipoAtaque": 0,
+            "Nombre": "Picadura",
+            "TipoAtaque": 11,
+            "Poder": 4
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 3,
+        "Defensa": 10,
+        "Velocidad": 3,
+        "Nivel": 9
+      }
+    },
+    {
+      "Datito": {
+        "Tipo": 3,
+        "Nombre": "Pikachu",
+        "Debilidades": [
+          "Tierra"
+        ],
+        "Resistencias": [
+          "Electrico",
+          "Acero",
+          "Volador"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Chispa",
+            "TipoAtaque": 3,
+            "Poder": 2
+          },
+          {
+            "Nombre": "Impactrueno",
+            "TipoAtaque": 3,
+            "Poder": 2
+          },
+          {
+            "Nombre": "Rayo",
+            "TipoAtaque": 3,
             "Poder": 2
           }
         ]
       },
       "Caracteristicas": {
         "Salud": 100,
-        "Ataque": 1,
-        "Defensa": 3,
-        "Velocidad": 8,
-        "Nivel": 10
+        "Ataque": 8,
+        "Defensa": 10,
+        "Velocidad": 2,
+        "Nivel": 6
       }
     },
     {
       "Datito": {
-        "Tipo": 14,
-        "Nombre": "dragonite",
+        "Tipo": 10,
+        "Nombre": "Abra",
         "Debilidades": [
-          "Hielo",
-          "Dragon",
-          "Hada"
+          "Bicho",
+          "Fantasma",
+          "Siniestro"
+        ],
+        "Resistencias": [
+          "Psiquico",
+          "Lucha"
         ],
         "Movimientos": [
           {
-            "Nombre": "Golpe Drag\u00F3n",
-            "TipoAtaque": 14,
-            "Poder": 4
-          },
-          {
-            "Nombre": "Cola Drag\u00F3n",
-            "TipoAtaque": 14,
-            "Poder": 1
-          },
-          {
-            "Nombre": "Tormenta de Fuego",
-            "TipoAtaque": 14,
+            "Nombre": "Psicorrayo",
+            "TipoAtaque": 10,
             "Poder": 3
+          },
+          {
+            "Nombre": "Confusi\u00F3n",
+            "TipoAtaque": 10,
+            "Poder": 2
+          },
+          {
+            "Nombre": "Telepat\u00EDa",
+            "TipoAtaque": 10,
+            "Poder": 5
           }
         ]
       },
       "Caracteristicas": {
         "Salud": 100,
-        "Ataque": 1,
+        "Ataque": 7,
         "Defensa": 7,
-        "Velocidad": 2,
-        "Nivel": 6
+        "Velocidad": 4,
+        "Nivel": 1
+      }
+    },
+    {
+      "Datito": {
+        "Tipo": 4,
+        "Nombre": "Bulbasaur",
+        "Debilidades": [
+          "Fuego",
+          "Hielo",
+          "Veneno",
+          "Volador",
+          "Bicho"
+        ],
+        "Resistencias": [
+          "Planta",
+          "Agua",
+          "Electrico",
+          "Tierra"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Rayo Solar",
+            "TipoAtaque": 4,
+            "Poder": 3
+          },
+          {
+            "Nombre": "Latigo Cepa",
+            "TipoAtaque": 4,
+            "Poder": 5
+          },
+          {
+            "Nombre": "Hoja Afilada",
+            "TipoAtaque": 4,
+            "Poder": 1
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 3,
+        "Defensa": 10,
+        "Velocidad": 9,
+        "Nivel": 10
+      }
+    },
+    {
+      "Datito": {
+        "Tipo": 0,
+        "Nombre": "Jigglypuff",
+        "Debilidades": [
+          "Lucha"
+        ],
+        "Resistencias": [
+          "Fantasma"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Canto",
+            "TipoAtaque": 0,
+            "Poder": 3
+          },
+          {
+            "Nombre": "Ataque R\u00E1pido",
+            "TipoAtaque": 0,
+            "Poder": 3
+          },
+          {
+            "Nombre": "Golpe Cabeza",
+            "TipoAtaque": 0,
+            "Poder": 5
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 3,
+        "Defensa": 4,
+        "Velocidad": 1,
+        "Nivel": 7
+      }
+    },
+    {
+      "Datito": {
+        "Tipo": 3,
+        "Nombre": "Pikachu",
+        "Debilidades": [
+          "Tierra"
+        ],
+        "Resistencias": [
+          "Electrico",
+          "Acero",
+          "Volador"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Impactrueno",
+            "TipoAtaque": 3,
+            "Poder": 5
+          },
+          {
+            "Nombre": "Chispa",
+            "TipoAtaque": 3,
+            "Poder": 2
+          },
+          {
+            "Nombre": "Rayo",
+            "TipoAtaque": 3,
+            "Poder": 1
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 9,
+        "Defensa": 9,
+        "Velocidad": 9,
+        "Nivel": 1
       }
     }
   ],
   "RivalActual": {
     "Datito": {
       "Tipo": 0,
-      "Nombre": "spearow",
+      "Nombre": "Jigglypuff",
       "Debilidades": [
         "Lucha"
       ],
+      "Resistencias": [
+        "Fantasma"
+      ],
       "Movimientos": [
         {
-          "Nombre": "Canto",
+          "Nombre": "Ataque R\u00E1pido",
           "TipoAtaque": 0,
           "Poder": 5
         },
         {
           "Nombre": "Golpe Cabeza",
           "TipoAtaque": 0,
-          "Poder": 3
+          "Poder": 5
         },
         {
-          "Nombre": "Ataque R\u00E1pido",
+          "Nombre": "Canto",
           "TipoAtaque": 0,
-          "Poder": 5
+          "Poder": 1
         }
       ]
     },
     "Caracteristicas": {
       "Salud": 100,
-      "Ataque": 8,
-      "Defensa": 8,
-      "Velocidad": 2,
-      "Nivel": 1
+      "Ataque": 10,
+      "Defensa": 10,
+      "Velocidad": 6,
+      "Nivel": 2
     }
   }
 }
