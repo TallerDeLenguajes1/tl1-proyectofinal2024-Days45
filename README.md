@@ -46,6 +46,9 @@ Este proyecto es un juego de combate 1 vs 1 inspirado en Pokémon. Los jugadores
    - **Descripción:** Permite al jugador seleccionar el rival con el que quiere enfrentarse en lugar de enfrentar a rivales aleatorios.
    - **Implementación:** Añade una opción en el menú de combate para elegir un rival de la lista de Pokémon disponibles.
 ## Recursos Utilizados
+### Espacios de Nombres en .NET
+    -System.Linq:https://learn.microsoft.com/en-us/dotnet/csharp/tutorials/working-with-linq
+    -System.Threading.Tasks:https://learn.microsoft.com/en-us/dotnet/fundamentals/runtime-libraries/system-threading-tasks-task
 ### Librerías Externas
 - **PokeAPI:** API pública utilizada para obtener información sobre Pokémon, como sus tipos y nombres. Permite generar dinámicamente los Pokémon del juego.
   - https://pokeapi.co/docs/v2

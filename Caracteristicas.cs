@@ -59,11 +59,11 @@ public class Caracteristicas
 
         if (defensor.Debilidades.Contains(tipoAtaque))
         {
-            efectividad *= 2.0; // Doble daño si el defensor tiene debilidad
+            efectividad *= 1.5; // Doble daño si el defensor tiene debilidad
         }
         if (defensor.Resistencias.Contains(tipoAtaque))
         {
-            efectividad *= 0.5; // Mitad de daño si el defensor tiene resistencia
+            efectividad *= 0.75; // Mitad de daño si el defensor tiene resistencia
         }
 
         return efectividad;
@@ -73,18 +73,18 @@ public class Caracteristicas
     public bool EsquivarAtaque(Caracteristicas atacante)
     {
         Random random = new Random();
-        double probabilidadEsquivar = (Velocidad - atacante.Velocidad) / 100.0;
+        double probabilidadEsquivar = Math.Max(0.0, (Velocidad - atacante.Velocidad) / 10.0);
         return random.NextDouble() < probabilidadEsquivar;
     }
 
     // Método para actualizar la salud del personaje después de recibir daño
     public void ActualizarSalud(double danoProvocado)
     {
-        Salud = Math.Max(0.0, Salud - danoProvocado);
+        Salud = Math.Max(0.0, Math.Round(Salud - danoProvocado, 2));
     }
 
     // Método para calcular el daño infligido en un ataque
-    public (double, bool) CalcularDano(
+    public double CalcularDano(
         Caracteristicas defensor,
         Movimiento movimiento,
         Datos datosAtacante,
@@ -98,20 +98,19 @@ public class Caracteristicas
         // Calcula la efectividad del ataque considerando las debilidades y resistencias del defensor
         double efectividad = CalcularEfectividad(movimiento, datosDefensor);
         // Calcula el daño base infligido teniendo en cuenta la defensa del defensor
-        double danoBase = (ataque * efectividad) / (defensa + 1);
+        double danoBase = (ataque * efectividad) / defensa+2;
         // Asegura que el daño provocado no sea negativo
-        double danoProvocado = Math.Max(0.0, danoBase);
-
+        // Redondea el daño a dos decimales
+        double danoProvocado = Math.Round(Math.Max(0.0, danoBase), 2);
         // Verifica si el defensor puede esquivar el ataque
-        bool esquivado = defensor.EsquivarAtaque(this);
-        if (esquivado)
+        if (defensor.EsquivarAtaque(this))
         {
             danoProvocado = 0.0; // No se inflige daño si el ataque es esquivado
         }
-
-        // Actualiza la salud del defensor y retorna el daño causado y si fue esquivado
+        // Actualiza la salud del defensor
         defensor.ActualizarSalud(danoProvocado);
-        return (danoProvocado, esquivado);
+        // Retorna el daño causado
+        return danoProvocado;
     }
 
     // Método para incrementar la salud del personaje (hasta un máximo de 100)
@@ -149,12 +148,11 @@ public class Caracteristicas
     // Método para mostrar las estadísticas del personaje en la consola
     public void MostrarEstadisticas()
     {
-        Mensajes mensaje = new Mensajes();
-        mensaje.ImprimirTituloCentrado($"Nivel: {Nivel}", ConsoleColor.Green);
-        mensaje.ImprimirTituloCentrado($"Salud: {Math.Round(Salud, 2)}", ConsoleColor.Green);
-        mensaje.ImprimirTituloCentrado($"Ataque: {Ataque}", ConsoleColor.Green);
-        mensaje.ImprimirTituloCentrado($"Defensa: {Defensa}", ConsoleColor.Green);
-        mensaje.ImprimirTituloCentrado($"Velocidad: {Velocidad}", ConsoleColor.Green);
+        Mensajes.ImprimirTituloCentrado($"Nivel: {Nivel}", ConsoleColor.Green);
+        Mensajes.ImprimirTituloCentrado($"Salud: {Math.Round(Salud, 2)}", ConsoleColor.Green);
+        Mensajes.ImprimirTituloCentrado($"Ataque: {Ataque}", ConsoleColor.Green);
+        Mensajes.ImprimirTituloCentrado($"Defensa: {Defensa}", ConsoleColor.Green);
+        Mensajes.ImprimirTituloCentrado($"Velocidad: {Velocidad}", ConsoleColor.Green);
     }
 }
 
@@ -197,5 +195,5 @@ public class Caracteristicas
  *    - Aumenta una estadística (ataque, defensa o velocidad) seleccionada aleatoriamente, hasta un máximo de 10.
 
  * 10. **MostrarEstadisticas()**:
- *     - Muestra las estadísticas del personaje en la consola utilizando la clase `Mensajes` para la impresión con formato.
+ *     - Muestra las estadísticas del personaje en la consola utilizando la clase `Mensajess` para la impresión con formato.
  */

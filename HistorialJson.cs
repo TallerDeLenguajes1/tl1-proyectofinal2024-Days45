@@ -122,19 +122,9 @@ namespace EspacioPersonaje
         // - nombreArchivo: El nombre del archivo a verificar.
         // Retorna:
         // - true si el archivo existe y tiene contenido; false en caso contrario.
-        public bool Existe(string nombreArchivo)
+        public static bool Existe(string nombreArchivo)
         {
-            try
-            {
-                // Verifica si el archivo existe y si su tamaño es mayor que cero.
-                return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
-            }
-            catch (Exception e)
-            {
-                // Maneja errores que puedan ocurrir al verificar el archivo.
-                Console.WriteLine($"Error al verificar el archivo '{nombreArchivo}': {e.Message}");
-                return false;
-            }
+            return Utilidades.Existe(nombreArchivo);
         }
     }
 }

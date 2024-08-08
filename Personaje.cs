@@ -67,10 +67,10 @@ namespace EspacioPersonaje
                 + $"Velocidad: {Caracteristicas.Velocidad}\n"
                 + $"Nivel: {Caracteristicas.Nivel}";
 
-            // Se crea un objeto Mensajes y se utiliza su método ImprimirTituloCentrado para imprimir los detalles del personaje en consola.
+            // Se crea un objeto Mensajess y se utiliza su método ImprimirTituloCentrado para imprimir los detalles del personaje en consola.
             // Este método también puede incluir la opción de cambiar el color del texto en consola.
-            Mensajes m = new Mensajes();
-            m.ImprimirTituloCentrado(detalles, ConsoleColor.Green);
+            
+            Mensajes.ImprimirTituloCentrado(detalles, ConsoleColor.Green);
         }
     }
 }

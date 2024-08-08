@@ -907,7 +907,7 @@
         ]
       },
       "Caracteristicas": {
-        "Salud": 90.72727272727275,
+        "Salud": 100,
         "Ataque": 10,
         "Defensa": 10,
         "Velocidad": 4,
@@ -915,5 +915,265 @@
       }
     },
     "fechaVictoria": "2024-08-05"
+  },
+  {
+    "personajeGanador": {
+      "Datito": {
+        "Tipo": 16,
+        "Nombre": "Magnemite",
+        "Debilidades": [
+          "Fuego",
+          "Lucha",
+          "Tierra"
+        ],
+        "Resistencias": [
+          "Acero",
+          "Normal",
+          "Volador",
+          "Dragon",
+          "Roca",
+          "Planta",
+          "Hada",
+          "Hielo",
+          "Psiquico",
+          "Bicho",
+          "Veneno"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Lanzamiento",
+            "TipoAtaque": 16,
+            "Poder": 2
+          },
+          {
+            "Nombre": "Golpe Acero",
+            "TipoAtaque": 16,
+            "Poder": 2
+          },
+          {
+            "Nombre": "Cuchilla Giratoria",
+            "TipoAtaque": 16,
+            "Poder": 2
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 8,
+        "Defensa": 10,
+        "Velocidad": 10,
+        "Nivel": 9
+      }
+    },
+    "fechaVictoria": "2024-08-06"
+  },
+  {
+    "personajeGanador": {
+      "Datito": {
+        "Tipo": 13,
+        "Nombre": "Gastly",
+        "Debilidades": [
+          "Fantasma",
+          "Siniestro"
+        ],
+        "Resistencias": [
+          "Bicho",
+          "Veneno",
+          "Lucha",
+          "Normal"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Onda Fantasma",
+            "TipoAtaque": 13,
+            "Poder": 3
+          },
+          {
+            "Nombre": "Lamento",
+            "TipoAtaque": 13,
+            "Poder": 4
+          },
+          {
+            "Nombre": "Golpe Fantasma",
+            "TipoAtaque": 13,
+            "Poder": 5
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 8,
+        "Defensa": 10,
+        "Velocidad": 10,
+        "Nivel": 10
+      }
+    },
+    "fechaVictoria": "2024-08-06"
+  },
+  {
+    "personajeGanador": {
+      "Datito": {
+        "Tipo": 15,
+        "Nombre": "Sneasel",
+        "Debilidades": [
+          "Lucha",
+          "Bicho",
+          "Hada"
+        ],
+        "Resistencias": [
+          "Siniestro",
+          "Fantasma",
+          "Psiquico"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Maldici\u00F3n",
+            "TipoAtaque": 15,
+            "Poder": 1
+          },
+          {
+            "Nombre": "Golpe Siniestro",
+            "TipoAtaque": 15,
+            "Poder": 3
+          },
+          {
+            "Nombre": "Onda Siniestra",
+            "TipoAtaque": 15,
+            "Poder": 4
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 10,
+        "Defensa": 8,
+        "Velocidad": 8,
+        "Nivel": 7
+      }
+    },
+    "fechaVictoria": "2024-08-07"
+  },
+  {
+    "personajeGanador": {
+      "Datito": {
+        "Tipo": 3,
+        "Nombre": "Pikachu",
+        "Debilidades": [
+          "Tierra"
+        ],
+        "Resistencias": [
+          "Electrico",
+          "Acero",
+          "Volador"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Chispa",
+            "TipoAtaque": 3,
+            "Poder": 3
+          },
+          {
+            "Nombre": "Impactrueno",
+            "TipoAtaque": 3,
+            "Poder": 1
+          },
+          {
+            "Nombre": "Rayo",
+            "TipoAtaque": 3,
+            "Poder": 1
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 6,
+        "Defensa": 10,
+        "Velocidad": 10,
+        "Nivel": 8
+      }
+    },
+    "fechaVictoria": "2024-08-07"
+  },
+  {
+    "personajeGanador": {
+      "Datito": {
+        "Tipo": 3,
+        "Nombre": "Pikachu",
+        "Debilidades": [
+          "Tierra"
+        ],
+        "Resistencias": [
+          "Electrico",
+          "Acero",
+          "Volador"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Chispa",
+            "TipoAtaque": 3,
+            "Poder": 3
+          },
+          {
+            "Nombre": "Impactrueno",
+            "TipoAtaque": 3,
+            "Poder": 1
+          },
+          {
+            "Nombre": "Rayo",
+            "TipoAtaque": 3,
+            "Poder": 1
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 5,
+        "Defensa": 10,
+        "Velocidad": 10,
+        "Nivel": 8
+      }
+    },
+    "fechaVictoria": "2024-08-08"
+  },
+  {
+    "personajeGanador": {
+      "Datito": {
+        "Tipo": 3,
+        "Nombre": "Pikachu",
+        "Debilidades": [
+          "Tierra"
+        ],
+        "Resistencias": [
+          "Electrico",
+          "Acero",
+          "Volador"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Chispa",
+            "TipoAtaque": 3,
+            "Poder": 3
+          },
+          {
+            "Nombre": "Impactrueno",
+            "TipoAtaque": 3,
+            "Poder": 1
+          },
+          {
+            "Nombre": "Rayo",
+            "TipoAtaque": 3,
+            "Poder": 1
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 97.11,
+        "Ataque": 6,
+        "Defensa": 9,
+        "Velocidad": 10,
+        "Nivel": 8
+      }
+    },
+    "fechaVictoria": "2024-08-08"
   }
 ]

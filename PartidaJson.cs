@@ -73,15 +73,7 @@ namespace EspacioPersonaje
         // Método para verificar si el archivo existe y no está vacío
         public static bool Existe(string nombreArchivo)
         {
-            try
-            {
-                return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Error al verificar el archivo '{nombreArchivo}': {e.Message}");
-                return false;
-            }
+            return Utilidades.Existe(nombreArchivo);
         }
     }
 }

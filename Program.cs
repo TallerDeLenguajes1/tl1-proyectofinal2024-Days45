@@ -9,8 +9,7 @@ namespace EspacioPersonaje
     {
         static async Task Main(string[] args)
         {
-            // Inicialización de instancias para manejar mensajes, elecciones y la fábrica de personajes
-            Mensajes mensaje = new Mensajes();
+            // Inicialización de instancias para manejar elecciones y la fábrica de personajes
             Eleccion eleccion = new Eleccion();
             FabricaDePersonajes fabrica = new FabricaDePersonajes();
 
@@ -41,9 +40,9 @@ namespace EspacioPersonaje
             do
             {
                 Console.Clear(); // Limpia la consola
-                mensaje.titulo1(); // Muestra el primer título del menú
-                mensaje.titulo2(); // Muestra el segundo título del menú
-                mensaje.MostrarOpciones(); // Muestra las opciones del menú
+                Mensajes.Titulo1(); // Muestra el primer título del menú
+                Mensajes.Titulo2(); // Muestra el segundo título del menú
+                Mensajes.MostrarOpciones(); // Muestra las opciones del menú
 
                 // Lee y procesa la opción del usuario
                 if (int.TryParse(Console.ReadLine(), out opcion))
@@ -52,7 +51,7 @@ namespace EspacioPersonaje
                     {
                         case 1:
                             // Opción 1: Elegir personajes y comenzar un combate
-                            if (personajes.Count < 10)
+                            if (personajes.Count < 5)
                             {
                                 // Si hay menos de 10 personajes, actualiza la lista desde la API
                                 personajes = await fabrica.eleccionApi();
@@ -125,7 +124,7 @@ namespace EspacioPersonaje
 
                             if (ganadores != null && ganadores.Count > 0)
                             {
-                                mensaje.ImprimirTituloCentrado(
+                                Mensajes.ImprimirTituloCentrado(
                                     "Historial de ganadores:\n",
                                     ConsoleColor.Yellow
                                 );
@@ -133,7 +132,7 @@ namespace EspacioPersonaje
                                 {
                                     var ganador = ganadores[i];
                                     string textoGanador =$"{i + 1}. Nombre: {ganador.personajeGanador.Datito.Nombre}, Tipo: {ganador.personajeGanador.Datito.Tipo}, Fecha: {ganador.fechaVictoria}";
-                                    mensaje.ImprimirTituloCentrado(
+                                    Mensajes.ImprimirTituloCentrado(
                                         textoGanador,
                                         ConsoleColor.Yellow
                                     );

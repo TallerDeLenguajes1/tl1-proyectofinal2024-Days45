@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 
 namespace EspacioPersonaje
@@ -7,14 +8,14 @@ namespace EspacioPersonaje
     // Permite seleccionar un nuevo rival y elegir personajes para el jugador y el rival.
     public class Eleccion
     {
-        // Instancia de la clase Mensajes utilizada para mostrar mensajes en la consola.
-        private Mensajes mensaje = new Mensajes();
+        // Instancia de la clase Mensajess utilizada para mostrar Mensajess en la consola.
+        //private Mensajess Mensajes = new Mensajess();
 
         // Método que elige un nuevo rival aleatorio de la lista de personajes.
         // El rival seleccionado se elimina de la lista para que no pueda ser seleccionado nuevamente.
         // Parámetros:
         // - personajes: Lista de personajes disponibles para elegir.
-        // Retorna:
+        // Retorna: 
         // - El personaje elegido como rival.
         // Excepciones:
         // - Lanza ArgumentException si la lista de personajes está vacía.
@@ -49,7 +50,7 @@ namespace EspacioPersonaje
                 throw new ArgumentException("No hay suficientes personajes para elegir.");
             }
 
-            mensaje.ImprimirTituloCentrado(
+            Mensajes.ImprimirTituloCentrado(
                 "Es tu turno de elegir tu Pokémon. Presiona cualquier tecla para continuar.",
                 ConsoleColor.Yellow
             );
@@ -57,7 +58,7 @@ namespace EspacioPersonaje
             Personaje personajeUsuario = SeleccionarPersonaje(personajes, "usuario"); // Permite al usuario seleccionar su personaje.
             personajes.Remove(personajeUsuario); // Elimina el personaje seleccionado del listado de personajes disponibles.
 
-            mensaje.ImprimirTituloCentrado("Tu rival es:", ConsoleColor.Red);
+            Mensajes.ImprimirTituloCentrado("Tu rival es:", ConsoleColor.Red);
             Personaje personajeRival = ElegirNuevoRival(personajes); // Selecciona un nuevo rival aleatorio.
             return (personajeUsuario, personajeRival); // Retorna una tupla con el personaje del usuario y el rival.
         }
@@ -65,7 +66,7 @@ namespace EspacioPersonaje
         // Método privado que permite al usuario seleccionar un personaje de la lista mediante la navegación con teclas.
         // Parámetros:
         // - personajes: Lista de personajes disponibles para elegir.
-        // - tipoSeleccion: Tipo de selección ("usuario") para mostrar mensajes específicos.
+        // - tipoSeleccion: Tipo de selección ("usuario") para mostrar Mensajess específicos.
         // Retorna:
         // - El personaje elegido por el usuario.
         private Personaje SeleccionarPersonaje(List<Personaje> personajes, string tipoSeleccion)
@@ -77,17 +78,17 @@ namespace EspacioPersonaje
             do
             {
                 Console.Clear(); // Limpia la consola.
-                mensaje.ImprimirTituloCentrado(
+                Mensajes.ImprimirTituloCentrado(
                     $"Pokémon número {indicePokemon + 1}",
                     ConsoleColor.Green
                 );
                 personajes[indicePokemon].mostrarPersonaje(); // Muestra los detalles del Pokémon actual.
 
-                mensaje.ImprimirTituloCentrado(
+                Mensajes.ImprimirTituloCentrado(
                     "Presiona Enter para ver el siguiente Pokémon.",
                     ConsoleColor.Cyan
                 );
-                mensaje.ImprimirTituloCentrado(
+                Mensajes.ImprimirTituloCentrado(
                     "Presiona Espacio para seleccionar el Pokémon actual.",
                     ConsoleColor.Cyan
                 );
@@ -103,7 +104,7 @@ namespace EspacioPersonaje
                 {
                     // Selecciona el Pokémon actual y sale del bucle.
                     pokemonElegido = personajes[indicePokemon];
-                    mensaje.ImprimirTituloCentrado(
+                    Mensajes.ImprimirTituloCentrado(
                         $"Has elegido a: {pokemonElegido.Datito.Nombre}!",
                         ConsoleColor.Green
                     );
@@ -111,7 +112,7 @@ namespace EspacioPersonaje
                 }
             } while (true); // Bucle infinito hasta que el usuario haga una selección.
 
-            mensaje.ImprimirTituloCentrado(
+            Mensajes.ImprimirTituloCentrado(
                 $"Has confirmado tu elección: {pokemonElegido.Datito.Nombre}",
                 ConsoleColor.Green
             );
@@ -119,6 +120,3 @@ namespace EspacioPersonaje
         }
     }
 }
-/*Uso de Console.ReadKey: Lee la tecla presionada por el usuario para determinar la acción (navegar o seleccionar).
-Uso de Console.Clear: Limpia la consola para actualizar la información mostrada.
-Uso de Modulo (%): Permite circular la selección al principio de la lista cuando se alcanza el final.*/

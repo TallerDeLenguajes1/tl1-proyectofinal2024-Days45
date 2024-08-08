@@ -1,32 +1,71 @@
 [
   {
     "Datito": {
-      "Tipo": 13,
-      "Nombre": "Gastly",
+      "Tipo": 7,
+      "Nombre": "Ekans",
       "Debilidades": [
-        "Fantasma",
-        "Siniestro"
+        "Tierra",
+        "Psiquico"
       ],
       "Resistencias": [
-        "Bicho",
         "Veneno",
         "Lucha",
-        "Normal"
+        "Hada",
+        "Bicho",
+        "Planta"
       ],
       "Movimientos": [
         {
-          "Nombre": "Golpe Fantasma",
-          "TipoAtaque": 13,
+          "Nombre": "Toxina",
+          "TipoAtaque": 7,
+          "Poder": 4
+        },
+        {
+          "Nombre": "Dardo Veneno",
+          "TipoAtaque": 7,
+          "Poder": 2
+        },
+        {
+          "Nombre": "Mordisco",
+          "TipoAtaque": 7,
+          "Poder": 3
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 9,
+      "Defensa": 8,
+      "Velocidad": 10,
+      "Nivel": 4
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 3,
+      "Nombre": "Pikachu",
+      "Debilidades": [
+        "Tierra"
+      ],
+      "Resistencias": [
+        "Electrico",
+        "Acero",
+        "Volador"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Chispa",
+          "TipoAtaque": 3,
           "Poder": 5
         },
         {
-          "Nombre": "Lamento",
-          "TipoAtaque": 13,
-          "Poder": 1
+          "Nombre": "Rayo",
+          "TipoAtaque": 3,
+          "Poder": 5
         },
         {
-          "Nombre": "Onda Fantasma",
-          "TipoAtaque": 13,
+          "Nombre": "Impactrueno",
+          "TipoAtaque": 3,
           "Poder": 5
         }
       ]
@@ -34,356 +73,141 @@
     "Caracteristicas": {
       "Salud": 100,
       "Ataque": 5,
-      "Defensa": 6,
-      "Velocidad": 5,
+      "Defensa": 7,
+      "Velocidad": 3,
       "Nivel": 4
     }
   },
   {
     "Datito": {
-      "Tipo": 0,
-      "Nombre": "Jigglypuff",
+      "Tipo": 1,
+      "Nombre": "Charmander",
       "Debilidades": [
-        "Lucha"
-      ],
-      "Resistencias": [
-        "Fantasma"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Ataque R\u00E1pido",
-          "TipoAtaque": 0,
-          "Poder": 5
-        },
-        {
-          "Nombre": "Golpe Cabeza",
-          "TipoAtaque": 0,
-          "Poder": 5
-        },
-        {
-          "Nombre": "Canto",
-          "TipoAtaque": 0,
-          "Poder": 1
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 10,
-      "Defensa": 10,
-      "Velocidad": 6,
-      "Nivel": 2
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 11,
-      "Nombre": "Caterpie",
-      "Debilidades": [
-        "Fuego",
-        "Volador",
+        "Agua",
+        "Tierra",
         "Roca"
       ],
       "Resistencias": [
+        "Fuego",
         "Bicho",
-        "Lucha",
-        "Planta",
-        "Volador"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Golpe Colmena",
-          "TipoAtaque": 11,
-          "Poder": 3
-        },
-        {
-          "Nombre": "Red de Ara\u00F1a",
-          "TipoAtaque": 11,
-          "Poder": 3
-        },
-        {
-          "Nombre": "Picadura",
-          "TipoAtaque": 11,
-          "Poder": 4
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 3,
-      "Defensa": 10,
-      "Velocidad": 3,
-      "Nivel": 9
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 13,
-      "Nombre": "Gastly",
-      "Debilidades": [
-        "Fantasma",
-        "Siniestro"
-      ],
-      "Resistencias": [
-        "Bicho",
-        "Veneno",
-        "Lucha",
-        "Normal"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Onda Fantasma",
-          "TipoAtaque": 13,
-          "Poder": 2
-        },
-        {
-          "Nombre": "Golpe Fantasma",
-          "TipoAtaque": 13,
-          "Poder": 3
-        },
-        {
-          "Nombre": "Lamento",
-          "TipoAtaque": 13,
-          "Poder": 5
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 4,
-      "Defensa": 3,
-      "Velocidad": 9,
-      "Nivel": 3
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 3,
-      "Nombre": "Pikachu",
-      "Debilidades": [
-        "Tierra"
-      ],
-      "Resistencias": [
-        "Electrico",
         "Acero",
-        "Volador"
+        "Hielo",
+        "Planta",
+        "Hada"
       ],
       "Movimientos": [
         {
-          "Nombre": "Chispa",
-          "TipoAtaque": 3,
-          "Poder": 2
+          "Nombre": "Pirotecnia",
+          "TipoAtaque": 1,
+          "Poder": 1
         },
         {
-          "Nombre": "Impactrueno",
-          "TipoAtaque": 3,
-          "Poder": 2
+          "Nombre": "Lanzallamas",
+          "TipoAtaque": 1,
+          "Poder": 5
         },
         {
-          "Nombre": "Rayo",
-          "TipoAtaque": 3,
-          "Poder": 2
+          "Nombre": "Ascuas",
+          "TipoAtaque": 1,
+          "Poder": 1
         }
       ]
     },
     "Caracteristicas": {
       "Salud": 100,
       "Ataque": 8,
-      "Defensa": 10,
-      "Velocidad": 2,
-      "Nivel": 6
+      "Defensa": 1,
+      "Velocidad": 10,
+      "Nivel": 9
     }
   },
   {
     "Datito": {
-      "Tipo": 10,
-      "Nombre": "Abra",
+      "Tipo": 16,
+      "Nombre": "Magnemite",
       "Debilidades": [
-        "Bicho",
-        "Fantasma",
-        "Siniestro"
+        "Fuego",
+        "Lucha",
+        "Tierra"
       ],
       "Resistencias": [
+        "Acero",
+        "Normal",
+        "Volador",
+        "Dragon",
+        "Roca",
+        "Planta",
+        "Hada",
+        "Hielo",
         "Psiquico",
-        "Lucha"
+        "Bicho",
+        "Veneno"
       ],
       "Movimientos": [
         {
-          "Nombre": "Psicorrayo",
-          "TipoAtaque": 10,
+          "Nombre": "Lanzamiento",
+          "TipoAtaque": 16,
+          "Poder": 5
+        },
+        {
+          "Nombre": "Golpe Acero",
+          "TipoAtaque": 16,
+          "Poder": 5
+        },
+        {
+          "Nombre": "Cuchilla Giratoria",
+          "TipoAtaque": 16,
+          "Poder": 5
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 3,
+      "Defensa": 1,
+      "Velocidad": 8,
+      "Nivel": 4
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 7,
+      "Nombre": "Ekans",
+      "Debilidades": [
+        "Tierra",
+        "Psiquico"
+      ],
+      "Resistencias": [
+        "Veneno",
+        "Lucha",
+        "Hada",
+        "Bicho",
+        "Planta"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Dardo Veneno",
+          "TipoAtaque": 7,
           "Poder": 3
         },
         {
-          "Nombre": "Confusi\u00F3n",
-          "TipoAtaque": 10,
-          "Poder": 2
+          "Nombre": "Toxina",
+          "TipoAtaque": 7,
+          "Poder": 5
         },
         {
-          "Nombre": "Telepat\u00EDa",
-          "TipoAtaque": 10,
-          "Poder": 5
+          "Nombre": "Mordisco",
+          "TipoAtaque": 7,
+          "Poder": 2
         }
       ]
     },
     "Caracteristicas": {
       "Salud": 100,
       "Ataque": 7,
-      "Defensa": 7,
-      "Velocidad": 4,
-      "Nivel": 1
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 0,
-      "Nombre": "Jigglypuff",
-      "Debilidades": [
-        "Lucha"
-      ],
-      "Resistencias": [
-        "Fantasma"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Canto",
-          "TipoAtaque": 0,
-          "Poder": 5
-        },
-        {
-          "Nombre": "Golpe Cabeza",
-          "TipoAtaque": 0,
-          "Poder": 4
-        },
-        {
-          "Nombre": "Ataque R\u00E1pido",
-          "TipoAtaque": 0,
-          "Poder": 3
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 2,
-      "Defensa": 2,
-      "Velocidad": 3,
-      "Nivel": 3
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 4,
-      "Nombre": "Bulbasaur",
-      "Debilidades": [
-        "Fuego",
-        "Hielo",
-        "Veneno",
-        "Volador",
-        "Bicho"
-      ],
-      "Resistencias": [
-        "Planta",
-        "Agua",
-        "Electrico",
-        "Tierra"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Rayo Solar",
-          "TipoAtaque": 4,
-          "Poder": 3
-        },
-        {
-          "Nombre": "Latigo Cepa",
-          "TipoAtaque": 4,
-          "Poder": 5
-        },
-        {
-          "Nombre": "Hoja Afilada",
-          "TipoAtaque": 4,
-          "Poder": 1
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 3,
       "Defensa": 10,
-      "Velocidad": 9,
+      "Velocidad": 10,
       "Nivel": 10
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 0,
-      "Nombre": "Jigglypuff",
-      "Debilidades": [
-        "Lucha"
-      ],
-      "Resistencias": [
-        "Fantasma"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Canto",
-          "TipoAtaque": 0,
-          "Poder": 3
-        },
-        {
-          "Nombre": "Ataque R\u00E1pido",
-          "TipoAtaque": 0,
-          "Poder": 3
-        },
-        {
-          "Nombre": "Golpe Cabeza",
-          "TipoAtaque": 0,
-          "Poder": 5
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 3,
-      "Defensa": 4,
-      "Velocidad": 1,
-      "Nivel": 7
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 3,
-      "Nombre": "Pikachu",
-      "Debilidades": [
-        "Tierra"
-      ],
-      "Resistencias": [
-        "Electrico",
-        "Acero",
-        "Volador"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Impactrueno",
-          "TipoAtaque": 3,
-          "Poder": 5
-        },
-        {
-          "Nombre": "Chispa",
-          "TipoAtaque": 3,
-          "Poder": 2
-        },
-        {
-          "Nombre": "Rayo",
-          "TipoAtaque": 3,
-          "Poder": 1
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 9,
-      "Defensa": 9,
-      "Velocidad": 9,
-      "Nivel": 1
     }
   }
 ]

@@ -8,7 +8,6 @@ namespace EspacioPersonaje
     public class FabricaDePersonajes
     {
         private Random random = new Random();
-        private Mensajes mensaje = new Mensajes();
         private ManejoApi manejoApi = new ManejoApi();
         private Dictionary<Elemento, List<Elemento>> resistenciasPorTipo = new Dictionary<
             Elemento,
@@ -417,7 +416,8 @@ namespace EspacioPersonaje
 
         public async Task<List<Personaje>> eleccionApi()
         {
-            mensaje.ImprimirTituloCentrado(
+            int cantidadPersonajes=5;
+            Mensajes.ImprimirTituloCentrado(
                 "¿Deseas usar la API para crear personajes? (S/N): ",
                 ConsoleColor.DarkYellow
             );
@@ -434,7 +434,7 @@ namespace EspacioPersonaje
                 {
                     try
                     {
-                        for (int i = 0; i < 10; i++)
+                        for (int i = 0; i < cantidadPersonajes; i++)
                         {
                             personajes.Add(await CrearPersonaje(usarApi));
                         }
@@ -456,7 +456,7 @@ namespace EspacioPersonaje
                     Console.WriteLine(
                         "No se pudo conectar a la API después de 3 intentos. Generando personajes con datos precargados..."
                     );
-                    for (int i = 0; i < 10; i++)
+                    for (int i = 0; i < cantidadPersonajes; i++)
                     {
                         personajes.Add(await CrearPersonaje(false));
                     }
@@ -464,7 +464,7 @@ namespace EspacioPersonaje
             }
             else
             {
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < cantidadPersonajes; i++)
                 {
                     personajes.Add(await CrearPersonaje(false));
                 }
@@ -494,7 +494,7 @@ eleccionApi()
 
 Propósito: Permite al usuario decidir si usar la API para crear personajes o usar datos precargados, y crea una lista de personajes en función de la elección del usuario.
 Flujo:
-Se muestra un mensaje al usuario preguntando si desea usar la API. Se lee la respuesta y se convierte a un valor booleano para determinar si se debe usar la API.
+Se muestra un Mensajes al usuario preguntando si desea usar la API. Se lee la respuesta y se convierte a un valor booleano para determinar si se debe usar la API.
 Si se elige usar la API, se intenta conectar hasta 3 veces. Si la conexión es exitosa, se crean 10 personajes usando la API mediante CrearPersonaje(true). Si la conexión falla, se espera medio segundo entre reintentos usando Task.Delay().
 Si no se puede conectar a la API después de 3 intentos, se genera una lista de 10 personajes con datos precargados llamando a CrearPersonaje(false).
 Si no se usa la API, se generan 10 personajes con datos precargados directamente.

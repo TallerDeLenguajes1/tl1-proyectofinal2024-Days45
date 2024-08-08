@@ -1,9 +1,9 @@
 ﻿namespace EspacioPersonaje
 {
-    public class Mensajes
+    public static class Mensajes
     {
         // Método para imprimir un título centrado en la consola con un color específico
-        public void ImprimirTituloCentrado(string titulo, ConsoleColor color)
+        public static void ImprimirTituloCentrado(string titulo, ConsoleColor color)
         {
             // Establece el color del texto en la consola
             Console.ForegroundColor = color;
@@ -28,7 +28,7 @@
         }
 
         // Muestra un menú de opciones centrado en la consola
-        public void MostrarOpciones()
+        public static void MostrarOpciones()
         {
             ImprimirTituloCentrado("1. Iniciar nueva partida", ConsoleColor.Yellow);
             ImprimirTituloCentrado("2. Continuar partida previa", ConsoleColor.Magenta);
@@ -39,7 +39,7 @@
         }
 
         // Imprime un título con arte ASCII para la primera opción
-        public void titulo1()
+        public static void Titulo1()
         {
             string titulo =
                 @"
@@ -48,13 +48,13 @@
 ██████  ██    ██ █████   █████   ██ ████ ██ ██    ██ ██ ██  ██ 
 ██      ██    ██ ██  ██  ██      ██  ██  ██ ██    ██ ██  ██ ██ 
 ██       ██████  ██   ██ ███████ ██      ██  ██████  ██   ████ 
-                                                              
+                                                             
 ";
             ImprimirTituloCentrado(titulo, ConsoleColor.Yellow);
         }
 
         // Imprime un título con arte ASCII para la segunda opción
-        public void titulo2()
+        public static void Titulo2()
         {
             string titulo2 =
                 @"
@@ -65,8 +65,8 @@
             ImprimirTituloCentrado(titulo2, ConsoleColor.Magenta);
         }
 
-        // Muestra un mensaje de victoria y una medalla ASCII para el ganador
-        public void Ganador(Personaje ganador)
+        // Muestra un Mensajes de victoria y una medalla ASCII para el ganador
+        public static void Ganador(Personaje ganador)
         {
             Console.WriteLine("\n");
             ImprimirTituloCentrado("¡Felicidades!", ConsoleColor.Green);
@@ -86,21 +86,32 @@
   |       |
   |  VICTORIA  |
   |       |
-  |  x10    |
+  |  <>   |
   |_______|
 ";
             ImprimirTituloCentrado(pokemonAscii, ConsoleColor.Yellow);
         }
 
-        // Muestra un mensaje de derrota para el perdedor
-        public void Perdedor(Personaje perdedor)
+        // Muestra un Mensajes de derrota para el perdedor
+        public static void Perdedor(Personaje perdedor)
         {
+            string perdio =
+                @"
+░░░░█░▀▄░░░░░░░░░░▄▄███▀░░
+░░░░█░░░▀▄░▄▄▄▄▄░▄▀░░░█▀░░
+░░░░░▀▄░░░▀░░░░░▀░░░▄▀░░░░
+░░░░░░░▌░▄▄░░░▄▄░▐▀▀░░░░░░
+░░░░░░▐░░█▄░░░▄█░░▌▄▄▀▀▀▀█
+░░░░░░▌▄▄▀▀░▄░▀▀▄▄▐░░░░░░█
+░░░▄▀▀▐▀▀░░░░░░░▀▀▌▄▄▄░░░█
+░░░█░░░▀▄░░░░░░░▄▀░░░░█▀▀▀";
+            ImprimirTituloCentrado(perdio, ConsoleColor.DarkBlue);
             ImprimirTituloCentrado("Lo siento, has perdido...", ConsoleColor.Red);
             Console.WriteLine($"{perdedor.Datito.Nombre} no pudo ganar todas las batallas.");
         }
 
-        // Muestra un mensaje indicando que el rival ha perdido
-        public void RivalPerdedor(Personaje perdedor)
+        // Muestra un Mensajes indicando que el rival ha perdido
+        public static void RivalPerdedor(Personaje perdedor)
         {
             ImprimirTituloCentrado("Tu rival ha perdido...", ConsoleColor.DarkRed);
             Console.WriteLine($"{perdedor.Datito.Nombre} no pudo ganar todas las batallas.");
