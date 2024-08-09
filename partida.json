@@ -1,96 +1,6 @@
 {
   "Jugador": {
     "Datito": {
-      "Tipo": 6,
-      "Nombre": "Machop",
-      "Debilidades": [
-        "Volador",
-        "Psiquico",
-        "Hada"
-      ],
-      "Resistencias": [
-        "Roca",
-        "Siniestro",
-        "Bicho"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Tackle",
-          "TipoAtaque": 6,
-          "Poder": 4
-        },
-        {
-          "Nombre": "Golpe Karate",
-          "TipoAtaque": 6,
-          "Poder": 4
-        },
-        {
-          "Nombre": "Pu\u00F1o Fuego",
-          "TipoAtaque": 6,
-          "Poder": 5
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 30.92,
-      "Ataque": 4,
-      "Defensa": 8,
-      "Velocidad": 10,
-      "Nivel": 1
-    }
-  },
-  "Rivales": [
-    {
-      "Datito": {
-        "Tipo": 16,
-        "Nombre": "Magnemite",
-        "Debilidades": [
-          "Fuego",
-          "Lucha",
-          "Tierra"
-        ],
-        "Resistencias": [
-          "Acero",
-          "Normal",
-          "Volador",
-          "Dragon",
-          "Roca",
-          "Planta",
-          "Hada",
-          "Hielo",
-          "Psiquico",
-          "Bicho",
-          "Veneno"
-        ],
-        "Movimientos": [
-          {
-            "Nombre": "Golpe Acero",
-            "TipoAtaque": 16,
-            "Poder": 5
-          },
-          {
-            "Nombre": "Lanzamiento",
-            "TipoAtaque": 16,
-            "Poder": 3
-          },
-          {
-            "Nombre": "Cuchilla Giratoria",
-            "TipoAtaque": 16,
-            "Poder": 3
-          }
-        ]
-      },
-      "Caracteristicas": {
-        "Salud": 100,
-        "Ataque": 7,
-        "Defensa": 2,
-        "Velocidad": 10,
-        "Nivel": 5
-      }
-    }
-  ],
-  "RivalActual": {
-    "Datito": {
       "Tipo": 1,
       "Nombre": "Charmander",
       "Debilidades": [
@@ -108,28 +18,72 @@
       ],
       "Movimientos": [
         {
+          "Nombre": "Pirotecnia",
+          "TipoAtaque": 1,
+          "Poder": 2
+        },
+        {
           "Nombre": "Ascuas",
           "TipoAtaque": 1,
-          "Poder": 1
+          "Poder": 4
         },
         {
           "Nombre": "Lanzallamas",
           "TipoAtaque": 1,
+          "Poder": 5
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 87,
+      "Ataque": 5,
+      "Defensa": 10,
+      "Velocidad": 10,
+      "Nivel": 8
+    }
+  },
+  "Rivales": [],
+  "RivalActual": {
+    "Datito": {
+      "Tipo": 4,
+      "Nombre": "Bulbasaur",
+      "Debilidades": [
+        "Fuego",
+        "Hielo",
+        "Veneno",
+        "Volador",
+        "Bicho"
+      ],
+      "Resistencias": [
+        "Planta",
+        "Agua",
+        "Electrico",
+        "Tierra"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Latigo Cepa",
+          "TipoAtaque": 4,
+          "Poder": 1
+        },
+        {
+          "Nombre": "Rayo Solar",
+          "TipoAtaque": 4,
           "Poder": 3
         },
         {
-          "Nombre": "Pirotecnia",
-          "TipoAtaque": 1,
+          "Nombre": "Hoja Afilada",
+          "TipoAtaque": 4,
           "Poder": 2
         }
       ]
     },
     "Caracteristicas": {
       "Salud": 100,
-      "Ataque": 8,
-      "Defensa": 8,
-      "Velocidad": 8,
-      "Nivel": 10
+      "Ataque": 2,
+      "Defensa": 10,
+      "Velocidad": 10,
+      "Nivel": 4
     }
   }
 }

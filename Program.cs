@@ -131,7 +131,8 @@ namespace EspacioPersonaje
                                 for (int i = 0; i < ganadores.Count; i++)
                                 {
                                     var ganador = ganadores[i];
-                                    string textoGanador =$"{i + 1}. Nombre: {ganador.personajeGanador.Datito.Nombre}, Tipo: {ganador.personajeGanador.Datito.Tipo}, Fecha: {ganador.fechaVictoria}";
+                                    string textoGanador =
+                                        $"{i + 1}. Nombre: {ganador.personajeGanador.Datito.Nombre}, Tipo: {ganador.personajeGanador.Datito.Tipo}, Fecha: {ganador.fechaVictoria}";
                                     Mensajes.ImprimirTituloCentrado(
                                         textoGanador,
                                         ConsoleColor.Yellow

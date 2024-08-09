@@ -7,15 +7,8 @@ namespace EspacioPersonaje
     {
         // Campo privado que almacena los datos del personaje.
         private Datos datito;
-
         // Campo privado que almacena las características del personaje.
         private Caracteristicas caracteristicas;
-
-        // Constructor de la clase Personaje.
-        // Inicializa un nuevo objeto Personaje con los datos y características proporcionados.
-        // Parámetros:
-        // - datito: Un objeto de tipo Datos que contiene la información del personaje (nombre, tipo, debilidades, resistencias, movimientos).
-        // - caracteristicas: Un objeto de tipo Caracteristicas que contiene las estadísticas del personaje (salud, ataque, defensa, velocidad, nivel).
         public Personaje(Datos datito, Caracteristicas caracteristicas)
         {
             this.datito = datito;

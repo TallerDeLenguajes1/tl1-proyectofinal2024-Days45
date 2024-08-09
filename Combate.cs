@@ -77,6 +77,7 @@ namespace EspacioPersonaje
         // Método para manejar el turno del usuario
         private void TurnoUsuario()
         {
+            
             Console.WriteLine("Elige uno de los siguientes movimientos:");
             for (int i = 0; i < personajeUsuario.Datito.Movimientos.Length; i++)
             {
@@ -109,30 +110,28 @@ namespace EspacioPersonaje
 
                     if (dano == 0)
                     {
-                        Console.WriteLine($"{personajeRival.Datito.Nombre} esquivó el ataque.");
+                     Mensajes.ImprimirTituloCentrado($"{personajeRival.Datito.Nombre} esquivó el ataque.", ConsoleColor.Red);   
                     }
                     else
                     {
-                        Console.WriteLine(
-                            $"¡El movimiento del usuario ha causado {dano} puntos de daño!"
-                        );
+                        Mensajes.ImprimirTituloCentrado($"¡El movimiento del usuario ha causado {dano} puntos de daño!", ConsoleColor.Red);
                     }
+                    Mensajes.ImprimirTituloCentrado( $"La salud del rival ahora es: {personajeRival.Caracteristicas.Salud}", ConsoleColor.Red);
 
-                    Console.WriteLine(
-                        $"La salud del rival ahora es: {personajeRival.Caracteristicas.Salud}"
-                    );
                     break;
                 }
                 else
                 {
                     Console.WriteLine("Selección no válida. Intenta de nuevo.");
                 }
+                
             }
         }
 
         // Método para manejar el turno del rival
         private void TurnoRival()
         {
+            
             var movimientoRival = personajeRival.Datito.Movimientos[
                 new Random().Next(personajeRival.Datito.Movimientos.Length)
             ];
@@ -147,15 +146,13 @@ namespace EspacioPersonaje
 
             if (dano == 0)
             {
-                Console.WriteLine($"{personajeUsuario.Datito.Nombre} esquivó el ataque.");
+                Mensajes.ImprimirTituloCentrado($"{personajeUsuario.Datito.Nombre} esquivó el ataque.", ConsoleColor.Green);
             }
             else
             {
-                Console.WriteLine($"¡El movimiento del rival ha causado {dano} puntos de daño!");
+                Mensajes.ImprimirTituloCentrado($"¡El movimiento del rival ha causado {dano} puntos de daño!", ConsoleColor.Green);
             }
-            Console.WriteLine(
-                $"La salud de tu Pokémon ahora es: {personajeUsuario.Caracteristicas.Salud}"
-            );
+            Mensajes.ImprimirTituloCentrado($"La salud de tu Pokémon ahora es: {personajeUsuario.Caracteristicas.Salud}", ConsoleColor.Green);
         }
 
         // Método para beneficiar al Pokémon del usuario después de ganar un combate

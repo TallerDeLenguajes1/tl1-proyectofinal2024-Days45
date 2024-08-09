@@ -59,16 +59,14 @@ public class Caracteristicas
 
         if (defensor.Debilidades.Contains(tipoAtaque))
         {
-            efectividad *= 1.5; // Doble daño si el defensor tiene debilidad
+            efectividad *= 1.5; 
         }
         if (defensor.Resistencias.Contains(tipoAtaque))
         {
-            efectividad *= 0.75; // Mitad de daño si el defensor tiene resistencia
+            efectividad *= 0.75; 
         }
-
         return efectividad;
     }
-
     // Método para calcular la probabilidad de esquivar un ataque
     public bool EsquivarAtaque(Caracteristicas atacante)
     {
@@ -98,7 +96,7 @@ public class Caracteristicas
         // Calcula la efectividad del ataque considerando las debilidades y resistencias del defensor
         double efectividad = CalcularEfectividad(movimiento, datosDefensor);
         // Calcula el daño base infligido teniendo en cuenta la defensa del defensor
-        double danoBase = (ataque * efectividad) / defensa+2;
+        double danoBase = (ataque * efectividad) / defensa+1;
         // Asegura que el daño provocado no sea negativo
         // Redondea el daño a dos decimales
         double danoProvocado = Math.Round(Math.Max(0.0, danoBase), 2);

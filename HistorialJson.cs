@@ -32,11 +32,6 @@ namespace EspacioPersonaje
     // Clase que gestiona el almacenamiento y recuperación de datos de ganadores en un archivo JSON.
     public class HistorialJson
     {
-        // Método para guardar la información de un ganador en un archivo JSON.
-        // Parámetros:
-        // - ganador: El personaje que ganó.
-        // - fecha: La fecha de victoria como objeto DateTime.
-        // - nombreArchivo: El nombre del archivo en el que se guardarán los datos.
         public void GuardarGanador(Personaje ganador, DateTime fecha, string nombreArchivo)
         {
             try
@@ -73,12 +68,6 @@ namespace EspacioPersonaje
                 Console.WriteLine($"Error al guardar el archivo '{nombreArchivo}': {e.Message}");
             }
         }
-
-        // Método para leer la lista de ganadores desde un archivo JSON.
-        // Parámetros:
-        // - nombreArchivo: El nombre del archivo desde el cual se leerán los datos.
-        // Retorna:
-        // - Una lista de objetos Ganador leída desde el archivo.
         public List<Ganador> LeerGanadores(string nombreArchivo)
         {
             List<Ganador> ganadores = new List<Ganador>();

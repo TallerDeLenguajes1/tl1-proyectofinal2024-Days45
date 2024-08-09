@@ -1167,7 +1167,7 @@
         ]
       },
       "Caracteristicas": {
-        "Salud": 97.11,
+        "Salud": 100,
         "Ataque": 6,
         "Defensa": 9,
         "Velocidad": 10,
@@ -1175,5 +1175,94 @@
       }
     },
     "fechaVictoria": "2024-08-08"
+  },
+  {
+    "personajeGanador": {
+      "Datito": {
+        "Tipo": 13,
+        "Nombre": "Gastly",
+        "Debilidades": [
+          "Fantasma",
+          "Siniestro"
+        ],
+        "Resistencias": [
+          "Bicho",
+          "Veneno",
+          "Lucha",
+          "Normal"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Onda Fantasma",
+            "TipoAtaque": 13,
+            "Poder": 5
+          },
+          {
+            "Nombre": "Lamento",
+            "TipoAtaque": 13,
+            "Poder": 2
+          },
+          {
+            "Nombre": "Golpe Fantasma",
+            "TipoAtaque": 13,
+            "Poder": 4
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 100,
+        "Ataque": 10,
+        "Defensa": 2,
+        "Velocidad": 10,
+        "Nivel": 10
+      }
+    },
+    "fechaVictoria": "2024-08-08"
+  },
+  {
+    "personajeGanador": {
+      "Datito": {
+        "Tipo": 1,
+        "Nombre": "Charmander",
+        "Debilidades": [
+          "Agua",
+          "Tierra",
+          "Roca"
+        ],
+        "Resistencias": [
+          "Fuego",
+          "Bicho",
+          "Acero",
+          "Hielo",
+          "Planta",
+          "Hada"
+        ],
+        "Movimientos": [
+          {
+            "Nombre": "Pirotecnia",
+            "TipoAtaque": 1,
+            "Poder": 2
+          },
+          {
+            "Nombre": "Ascuas",
+            "TipoAtaque": 1,
+            "Poder": 4
+          },
+          {
+            "Nombre": "Lanzallamas",
+            "TipoAtaque": 1,
+            "Poder": 5
+          }
+        ]
+      },
+      "Caracteristicas": {
+        "Salud": 90.6,
+        "Ataque": 5,
+        "Defensa": 10,
+        "Velocidad": 10,
+        "Nivel": 8
+      }
+    },
+    "fechaVictoria": "2024-08-09"
   }
 ]

@@ -1,81 +1,168 @@
 [
   {
     "Datito": {
-      "Tipo": 7,
-      "Nombre": "Ekans",
+      "Tipo": 15,
+      "Nombre": "Sneasel",
       "Debilidades": [
-        "Tierra",
-        "Psiquico"
+        "Lucha",
+        "Bicho",
+        "Hada"
       ],
       "Resistencias": [
-        "Veneno",
-        "Lucha",
-        "Hada",
-        "Bicho",
-        "Planta"
+        "Siniestro",
+        "Fantasma",
+        "Psiquico"
       ],
       "Movimientos": [
         {
-          "Nombre": "Toxina",
-          "TipoAtaque": 7,
-          "Poder": 4
-        },
-        {
-          "Nombre": "Dardo Veneno",
-          "TipoAtaque": 7,
+          "Nombre": "Maldici\u00F3n",
+          "TipoAtaque": 15,
           "Poder": 2
         },
         {
-          "Nombre": "Mordisco",
-          "TipoAtaque": 7,
+          "Nombre": "Onda Siniestra",
+          "TipoAtaque": 15,
+          "Poder": 4
+        },
+        {
+          "Nombre": "Golpe Siniestro",
+          "TipoAtaque": 15,
+          "Poder": 4
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 6,
+      "Defensa": 10,
+      "Velocidad": 1,
+      "Nivel": 8
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 13,
+      "Nombre": "Gastly",
+      "Debilidades": [
+        "Fantasma",
+        "Siniestro"
+      ],
+      "Resistencias": [
+        "Bicho",
+        "Veneno",
+        "Lucha",
+        "Normal"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Onda Fantasma",
+          "TipoAtaque": 13,
+          "Poder": 4
+        },
+        {
+          "Nombre": "Golpe Fantasma",
+          "TipoAtaque": 13,
+          "Poder": 2
+        },
+        {
+          "Nombre": "Lamento",
+          "TipoAtaque": 13,
           "Poder": 3
         }
       ]
     },
     "Caracteristicas": {
       "Salud": 100,
-      "Ataque": 9,
-      "Defensa": 8,
+      "Ataque": 2,
+      "Defensa": 2,
+      "Velocidad": 8,
+      "Nivel": 4
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 4,
+      "Nombre": "Bulbasaur",
+      "Debilidades": [
+        "Fuego",
+        "Hielo",
+        "Veneno",
+        "Volador",
+        "Bicho"
+      ],
+      "Resistencias": [
+        "Planta",
+        "Agua",
+        "Electrico",
+        "Tierra"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Latigo Cepa",
+          "TipoAtaque": 4,
+          "Poder": 1
+        },
+        {
+          "Nombre": "Rayo Solar",
+          "TipoAtaque": 4,
+          "Poder": 3
+        },
+        {
+          "Nombre": "Hoja Afilada",
+          "TipoAtaque": 4,
+          "Poder": 2
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 2,
+      "Defensa": 10,
       "Velocidad": 10,
       "Nivel": 4
     }
   },
   {
     "Datito": {
-      "Tipo": 3,
-      "Nombre": "Pikachu",
+      "Tipo": 1,
+      "Nombre": "Charmander",
       "Debilidades": [
-        "Tierra"
+        "Agua",
+        "Tierra",
+        "Roca"
       ],
       "Resistencias": [
-        "Electrico",
+        "Fuego",
+        "Bicho",
         "Acero",
-        "Volador"
+        "Hielo",
+        "Planta",
+        "Hada"
       ],
       "Movimientos": [
         {
-          "Nombre": "Chispa",
-          "TipoAtaque": 3,
-          "Poder": 5
+          "Nombre": "Ascuas",
+          "TipoAtaque": 1,
+          "Poder": 2
         },
         {
-          "Nombre": "Rayo",
-          "TipoAtaque": 3,
-          "Poder": 5
+          "Nombre": "Pirotecnia",
+          "TipoAtaque": 1,
+          "Poder": 1
         },
         {
-          "Nombre": "Impactrueno",
-          "TipoAtaque": 3,
-          "Poder": 5
+          "Nombre": "Lanzallamas",
+          "TipoAtaque": 1,
+          "Poder": 3
         }
       ]
     },
     "Caracteristicas": {
       "Salud": 100,
-      "Ataque": 5,
-      "Defensa": 7,
-      "Velocidad": 3,
-      "Nivel": 4
+      "Ataque": 4,
+      "Defensa": 8,
+      "Velocidad": 5,
+      "Nivel": 7
     }
   },
   {
@@ -99,64 +186,16 @@
         {
           "Nombre": "Pirotecnia",
           "TipoAtaque": 1,
-          "Poder": 1
-        },
-        {
-          "Nombre": "Lanzallamas",
-          "TipoAtaque": 1,
-          "Poder": 5
+          "Poder": 2
         },
         {
           "Nombre": "Ascuas",
           "TipoAtaque": 1,
-          "Poder": 1
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 8,
-      "Defensa": 1,
-      "Velocidad": 10,
-      "Nivel": 9
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 16,
-      "Nombre": "Magnemite",
-      "Debilidades": [
-        "Fuego",
-        "Lucha",
-        "Tierra"
-      ],
-      "Resistencias": [
-        "Acero",
-        "Normal",
-        "Volador",
-        "Dragon",
-        "Roca",
-        "Planta",
-        "Hada",
-        "Hielo",
-        "Psiquico",
-        "Bicho",
-        "Veneno"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Lanzamiento",
-          "TipoAtaque": 16,
-          "Poder": 5
+          "Poder": 4
         },
         {
-          "Nombre": "Golpe Acero",
-          "TipoAtaque": 16,
-          "Poder": 5
-        },
-        {
-          "Nombre": "Cuchilla Giratoria",
-          "TipoAtaque": 16,
+          "Nombre": "Lanzallamas",
+          "TipoAtaque": 1,
           "Poder": 5
         }
       ]
@@ -164,50 +203,9 @@
     "Caracteristicas": {
       "Salud": 100,
       "Ataque": 3,
-      "Defensa": 1,
-      "Velocidad": 8,
-      "Nivel": 4
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 7,
-      "Nombre": "Ekans",
-      "Debilidades": [
-        "Tierra",
-        "Psiquico"
-      ],
-      "Resistencias": [
-        "Veneno",
-        "Lucha",
-        "Hada",
-        "Bicho",
-        "Planta"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Dardo Veneno",
-          "TipoAtaque": 7,
-          "Poder": 3
-        },
-        {
-          "Nombre": "Toxina",
-          "TipoAtaque": 7,
-          "Poder": 5
-        },
-        {
-          "Nombre": "Mordisco",
-          "TipoAtaque": 7,
-          "Poder": 2
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 7,
       "Defensa": 10,
-      "Velocidad": 10,
-      "Nivel": 10
+      "Velocidad": 9,
+      "Nivel": 8
     }
   }
 ]
