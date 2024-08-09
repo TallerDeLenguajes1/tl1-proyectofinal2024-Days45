@@ -1,73 +1,32 @@
 [
   {
     "Datito": {
-      "Tipo": 15,
-      "Nombre": "Sneasel",
+      "Tipo": 10,
+      "Nombre": "spoink",
       "Debilidades": [
-        "Lucha",
         "Bicho",
-        "Hada"
-      ],
-      "Resistencias": [
-        "Siniestro",
-        "Fantasma",
-        "Psiquico"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Maldici\u00F3n",
-          "TipoAtaque": 15,
-          "Poder": 2
-        },
-        {
-          "Nombre": "Onda Siniestra",
-          "TipoAtaque": 15,
-          "Poder": 4
-        },
-        {
-          "Nombre": "Golpe Siniestro",
-          "TipoAtaque": 15,
-          "Poder": 4
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 6,
-      "Defensa": 10,
-      "Velocidad": 1,
-      "Nivel": 8
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 13,
-      "Nombre": "Gastly",
-      "Debilidades": [
         "Fantasma",
         "Siniestro"
       ],
       "Resistencias": [
-        "Bicho",
-        "Veneno",
-        "Lucha",
-        "Normal"
+        "Psiquico",
+        "Lucha"
       ],
       "Movimientos": [
         {
-          "Nombre": "Onda Fantasma",
-          "TipoAtaque": 13,
-          "Poder": 4
-        },
-        {
-          "Nombre": "Golpe Fantasma",
-          "TipoAtaque": 13,
-          "Poder": 2
-        },
-        {
-          "Nombre": "Lamento",
-          "TipoAtaque": 13,
+          "Nombre": "Confusi\u00F3n",
+          "TipoAtaque": 10,
           "Poder": 3
+        },
+        {
+          "Nombre": "Telepat\u00EDa",
+          "TipoAtaque": 10,
+          "Poder": 5
+        },
+        {
+          "Nombre": "Psicorrayo",
+          "TipoAtaque": 10,
+          "Poder": 2
         }
       ]
     },
@@ -81,131 +40,162 @@
   },
   {
     "Datito": {
-      "Tipo": 4,
-      "Nombre": "Bulbasaur",
+      "Tipo": 10,
+      "Nombre": "gothita",
       "Debilidades": [
-        "Fuego",
-        "Hielo",
-        "Veneno",
-        "Volador",
-        "Bicho"
+        "Bicho",
+        "Fantasma",
+        "Siniestro"
       ],
       "Resistencias": [
-        "Planta",
-        "Agua",
-        "Electrico",
-        "Tierra"
+        "Psiquico",
+        "Lucha"
       ],
       "Movimientos": [
         {
-          "Nombre": "Latigo Cepa",
-          "TipoAtaque": 4,
-          "Poder": 1
-        },
-        {
-          "Nombre": "Rayo Solar",
-          "TipoAtaque": 4,
+          "Nombre": "Telepat\u00EDa",
+          "TipoAtaque": 10,
           "Poder": 3
         },
         {
-          "Nombre": "Hoja Afilada",
-          "TipoAtaque": 4,
+          "Nombre": "Psicorrayo",
+          "TipoAtaque": 10,
+          "Poder": 3
+        },
+        {
+          "Nombre": "Confusi\u00F3n",
+          "TipoAtaque": 10,
+          "Poder": 1
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 9,
+      "Defensa": 3,
+      "Velocidad": 2,
+      "Nivel": 7
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 12,
+      "Nombre": "minior-red-meteor",
+      "Debilidades": [
+        "Agua",
+        "Planta",
+        "Lucha",
+        "Tierra",
+        "Acero"
+      ],
+      "Resistencias": [
+        "Volador",
+        "Normal",
+        "Fuego",
+        "Veneno"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Golpe Roca",
+          "TipoAtaque": 12,
+          "Poder": 4
+        },
+        {
+          "Nombre": "Terremoto",
+          "TipoAtaque": 12,
+          "Poder": 5
+        },
+        {
+          "Nombre": "Roca Afilada",
+          "TipoAtaque": 12,
           "Poder": 2
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 6,
+      "Defensa": 1,
+      "Velocidad": 6,
+      "Nivel": 9
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 3,
+      "Nombre": "rotom",
+      "Debilidades": [
+        "Tierra"
+      ],
+      "Resistencias": [
+        "Electrico",
+        "Acero",
+        "Volador"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Impactrueno",
+          "TipoAtaque": 3,
+          "Poder": 2
+        },
+        {
+          "Nombre": "Chispa",
+          "TipoAtaque": 3,
+          "Poder": 3
+        },
+        {
+          "Nombre": "Rayo",
+          "TipoAtaque": 3,
+          "Poder": 3
+        }
+      ]
+    },
+    "Caracteristicas": {
+      "Salud": 100,
+      "Ataque": 9,
+      "Defensa": 1,
+      "Velocidad": 8,
+      "Nivel": 7
+    }
+  },
+  {
+    "Datito": {
+      "Tipo": 2,
+      "Nombre": "starmie",
+      "Debilidades": [
+        "Planta",
+        "Electrico"
+      ],
+      "Resistencias": [
+        "Agua",
+        "Fuego",
+        "Hielo",
+        "Acero"
+      ],
+      "Movimientos": [
+        {
+          "Nombre": "Pistola Agua",
+          "TipoAtaque": 2,
+          "Poder": 3
+        },
+        {
+          "Nombre": "Burbuja",
+          "TipoAtaque": 2,
+          "Poder": 2
+        },
+        {
+          "Nombre": "Hidrobomba",
+          "TipoAtaque": 2,
+          "Poder": 4
         }
       ]
     },
     "Caracteristicas": {
       "Salud": 100,
       "Ataque": 2,
-      "Defensa": 10,
-      "Velocidad": 10,
-      "Nivel": 4
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 1,
-      "Nombre": "Charmander",
-      "Debilidades": [
-        "Agua",
-        "Tierra",
-        "Roca"
-      ],
-      "Resistencias": [
-        "Fuego",
-        "Bicho",
-        "Acero",
-        "Hielo",
-        "Planta",
-        "Hada"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Ascuas",
-          "TipoAtaque": 1,
-          "Poder": 2
-        },
-        {
-          "Nombre": "Pirotecnia",
-          "TipoAtaque": 1,
-          "Poder": 1
-        },
-        {
-          "Nombre": "Lanzallamas",
-          "TipoAtaque": 1,
-          "Poder": 3
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 4,
       "Defensa": 8,
-      "Velocidad": 5,
-      "Nivel": 7
-    }
-  },
-  {
-    "Datito": {
-      "Tipo": 1,
-      "Nombre": "Charmander",
-      "Debilidades": [
-        "Agua",
-        "Tierra",
-        "Roca"
-      ],
-      "Resistencias": [
-        "Fuego",
-        "Bicho",
-        "Acero",
-        "Hielo",
-        "Planta",
-        "Hada"
-      ],
-      "Movimientos": [
-        {
-          "Nombre": "Pirotecnia",
-          "TipoAtaque": 1,
-          "Poder": 2
-        },
-        {
-          "Nombre": "Ascuas",
-          "TipoAtaque": 1,
-          "Poder": 4
-        },
-        {
-          "Nombre": "Lanzallamas",
-          "TipoAtaque": 1,
-          "Poder": 5
-        }
-      ]
-    },
-    "Caracteristicas": {
-      "Salud": 100,
-      "Ataque": 3,
-      "Defensa": 10,
-      "Velocidad": 9,
-      "Nivel": 8
+      "Velocidad": 4,
+      "Nivel": 1
     }
   }
 ]

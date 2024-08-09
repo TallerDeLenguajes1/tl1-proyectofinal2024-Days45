@@ -15,10 +15,7 @@ namespace EspacioPersonaje
         private Random random = new Random();
 
         // Diccionario que mapea nombres de tipos de Pokémon en inglés a su correspondiente enumeración de Elemento.
-        private static readonly Dictionary<string, Elemento> tipoMapping = new Dictionary<
-            string,
-            Elemento
-        >
+        private static readonly Dictionary<string, Elemento> tipoMapping = new Dictionary<string, Elemento>
         {
             { "normal", Elemento.Normal },
             { "fire", Elemento.Fuego },
@@ -43,65 +40,130 @@ namespace EspacioPersonaje
         // Obtiene el nombre de un Pokémon aleatorio.
         public async Task<string> ObtenerNombrePokemonAleatorio()
         {
-            // Obtiene el número total de Pokémon disponibles.
-            int totalPokemon = await ObtenerNumeroTotalPokemon();
-            // Genera un ID aleatorio para el Pokémon.
-            int idAleatorio = random.Next(1, totalPokemon + 1);
-            // Obtiene los datos del Pokémon basado en el ID.
-            var pokemonData = await ObtenerPokemonPorId(idAleatorio);
-            // Retorna el nombre del Pokémon.
-            string nombrePokemon = pokemonData.name;
-            return nombrePokemon;
+            try
+            {
+                int totalPokemon = await ObtenerNumeroTotalPokemon();
+                int idAleatorio = random.Next(1, totalPokemon + 1);
+                var pokemonData = await ObtenerPokemonPorId(idAleatorio);
+                return pokemonData?.name ?? "Desconocido";
+            }
+            catch (HttpRequestException ex)
+            {
+                // Manejo de error: mostrar mensaje, realizar nuevo intento, etc.
+                Console.WriteLine("Error al conectar con la API: " + ex.Message);
+                return "Error";
+            }
+            catch (JsonException ex)
+            {
+                // Manejo de error: mostrar mensaje, loggear error, etc.
+                Console.WriteLine("Error al procesar la respuesta de la API: " + ex.Message);
+                return "Error";
+            }
+            catch (Exception ex)
+            {
+                // Manejo de cualquier otro error inesperado.
+                Console.WriteLine("Ocurrió un error inesperado: " + ex.Message);
+                return "Error";
+            }
         }
 
         // Obtiene el nombre y el tipo de un Pokémon dado su nombre.
-        public async Task<(string nombre, Elemento tipo)> ObtenerNombreYTipoPokemon(
-            string nombrePokemon
-        )
+        public async Task<(string nombre, Elemento tipo)> ObtenerNombreYTipoPokemon(string nombrePokemon)
         {
-            // Envía una solicitud HTTP para obtener los datos del Pokémon.
-            var response = await client.GetStringAsync(
-                $"https://pokeapi.co/api/v2/pokemon/{nombrePokemon.ToLower()}"
-            );
-            // Deserializa la respuesta JSON a un objeto PokeJson.
-            var pokemonData = JsonSerializer.Deserialize<PokeJson>(response);
-
-            string nombre = pokemonData.name;
-            // Obtiene el tipo del Pokémon en inglés.
-            string tipoIngles = pokemonData.types[0].type.name;
-
-            // Busca el tipo en el diccionario tipoMapping.
-            if (tipoMapping.TryGetValue(tipoIngles, out Elemento tipoEnum))
+            try
             {
-                return (nombre, tipoEnum);
-            }
+                var response = await client.GetStringAsync($"https://pokeapi.co/api/v2/pokemon/{nombrePokemon.ToLower()}");
+                var pokemonData = JsonSerializer.Deserialize<PokeJson>(response);
 
-            // Retorna Elemento.Desconocido si el tipo no se encuentra en el diccionario.
-            return (null, Elemento.Desconocido);
+                string nombre = pokemonData?.name;
+                string tipoIngles = pokemonData?.types[0]?.type?.name;
+
+                if (tipoMapping.TryGetValue(tipoIngles, out Elemento tipoEnum))
+                {
+                    return (nombre, tipoEnum);
+                }
+
+                return (nombre, Elemento.Desconocido);
+            }
+            catch (HttpRequestException ex)
+            {
+                // Manejo de error: mostrar mensaje, realizar nuevo intento, etc.
+                Console.WriteLine("Error al conectar con la API: " + ex.Message);
+                return (null, Elemento.Desconocido);
+            }
+            catch (JsonException ex)
+            {
+                // Manejo de error: mostrar mensaje, loggear error, etc.
+                Console.WriteLine("Error al procesar la respuesta de la API: " + ex.Message);
+                return (null, Elemento.Desconocido);
+            }
+            catch (Exception ex)
+            {
+                // Manejo de cualquier otro error inesperado.
+                Console.WriteLine("Ocurrió un error inesperado: " + ex.Message);
+                return (null, Elemento.Desconocido);
+            }
         }
 
         // Obtiene el número total de Pokémon disponibles en la API.
         private async Task<int> ObtenerNumeroTotalPokemon()
         {
-            // Envía una solicitud HTTP para obtener los datos de especies de Pokémon.
-            var response = await client.GetStringAsync(
-                "https://pokeapi.co/api/v2/pokemon-species?limit=1"
-            );
-            // Deserializa la respuesta JSON a un objeto TiposPoke.
-            var data = JsonSerializer.Deserialize<TiposPoke>(response);
-            return data.count;
+            try
+            {
+                var response = await client.GetStringAsync("https://pokeapi.co/api/v2/pokemon-species?limit=1");
+                var data = JsonSerializer.Deserialize<TiposPoke>(response);
+                return data?.count ?? 0;
+            }
+            catch (HttpRequestException ex)
+            {
+                // Manejo de error: mostrar mensaje, realizar nuevo intento, etc.
+                Console.WriteLine("Error al conectar con la API: " + ex.Message);
+                return 0;
+            }
+            catch (JsonException ex)
+            {
+                // Manejo de error: mostrar mensaje, loggear error, etc.
+                Console.WriteLine("Error al procesar la respuesta de la API: " + ex.Message);
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                // Manejo de cualquier otro error inesperado.
+                Console.WriteLine("Ocurrió un error inesperado: " + ex.Message);
+                return 0;
+            }
         }
 
         // Obtiene los datos de un Pokémon basado en su ID.
         private async Task<PokeJson> ObtenerPokemonPorId(int id)
         {
-            // Envía una solicitud HTTP para obtener los datos del Pokémon basado en el ID.
-            var response = await client.GetStringAsync($"https://pokeapi.co/api/v2/pokemon/{id}");
-            // Deserializa la respuesta JSON a un objeto PokeJson.
-            return JsonSerializer.Deserialize<PokeJson>(response);
+            try
+            {
+                var response = await client.GetStringAsync($"https://pokeapi.co/api/v2/pokemon/{id}");
+                return JsonSerializer.Deserialize<PokeJson>(response);
+            }
+            catch (HttpRequestException ex)
+            {
+                // Manejo de error: mostrar mensaje, realizar nuevo intento, etc.
+                Console.WriteLine("Error al conectar con la API: " + ex.Message);
+                return null;
+            }
+            catch (JsonException ex)
+            {
+                // Manejo de error: mostrar mensaje, loggear error, etc.
+                Console.WriteLine("Error al procesar la respuesta de la API: " + ex.Message);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                // Manejo de cualquier otro error inesperado.
+                Console.WriteLine("Ocurrió un error inesperado: " + ex.Message);
+                return null;
+            }
         }
     }
 }
+
 /*ObtenerNombrePokemonAleatorio: Esta función está diseñada para obtener un nombre de Pokémon de manera aleatoria. Primero, solicita el número total de Pokémon desde la API y luego genera un ID aleatorio dentro de ese rango. Usando el ID aleatorio, recupera los datos del Pokémon y extrae su nombre.
 
 ObtenerNombreYTipoPokemon: Esta función recibe el nombre de un Pokémon y devuelve una tupla que contiene su nombre y tipo. Realiza una solicitud a la API de Pokémon para obtener los datos del Pokémon, luego deserializa la respuesta JSON para extraer el tipo en inglés y usa un diccionario (tipoMapping) para mapear este tipo a la enumeración Elemento.

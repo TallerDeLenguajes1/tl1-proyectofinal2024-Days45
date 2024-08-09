@@ -53,7 +53,7 @@ namespace EspacioPersonaje
                             // Opción 1: Elegir personajes y comenzar un combate
                             if (personajes.Count < 5)
                             {
-                                // Si hay menos de 10 personajes, actualiza la lista desde la API
+                    
                                 personajes = await fabrica.eleccionApi();
                                 PersonajesJson.GuardarPersonajes(personajes, nombreArchivo);
                             }
